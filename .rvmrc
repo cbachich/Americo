@@ -1,0 +1,3 @@
+rvm use 2.0.0
+rvm gemset create americo
+rvm gemset use americo
