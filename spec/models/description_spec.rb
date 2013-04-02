@@ -1,0 +1,36 @@
+# == Schema Information
+#
+# Table name: descriptions
+#
+#  id         :integer          not null, primary key
+#  title      :string(255)
+#  body       :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+require 'spec_helper'
+
+describe Description do
+  before do
+    @desc = 
+      Description.create(
+        title: "Test Title", 
+         body: "Testing the body contains text") 
+  end
+
+  subject { @desc }
+
+  it { should respond_to(:title) }
+  it { should respond_to(:body) }
+
+  describe "when title is not present" do
+    before { @desc.title = " " }
+    it { should_not be_valid }
+  end
+
+  describe "when body is not present" do
+    before { @desc.body = " " }
+    it { should_not be_valid }
+  end
+end
