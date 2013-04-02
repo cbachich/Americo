@@ -9,6 +9,7 @@ gem 'rails', '~> 3.2.13'
 group :development, :test do
   gem 'rspec-rails', '~> 2.13.0'
   gem 'sqlite3', '~> 1.3.7'
+  gem 'annotate', '~> 2.5.0'
 end
 
 # Gems used only for assets and not required
