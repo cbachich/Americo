@@ -7,6 +7,7 @@
 #  body       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  company_id :integer
 #
 
 require 'spec_helper'
@@ -23,6 +24,8 @@ describe Description do
 
   it { should respond_to(:title) }
   it { should respond_to(:body) }
+  it { should respond_to(:created_at) }
+  it { should respond_to(:updated_at) }
 
   describe "when title is not present" do
     before { @desc.title = " " }
