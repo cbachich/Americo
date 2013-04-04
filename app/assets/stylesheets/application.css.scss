@@ -17,7 +17,11 @@
 }
 
 .sidebar-nav-fixed {
-     position: fixed;
-     top: 0px;
-     bottom: 0px;
- }
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+}
+
+.small-margin {
+  margin: 10px;
+}
