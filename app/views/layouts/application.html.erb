@@ -8,8 +8,11 @@
 </head>
 <body>
 
-  <div class="container">
-    <div class="content">
+  <div class="row-fluid">
+    <aside class="span2">
+      <%= render 'layouts/sidebar' %>
+    </aside>
+    <div class="span10 center">
       <%= yield %>
     </div>
   </div>
