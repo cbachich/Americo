@@ -3,7 +3,13 @@
     <li>
       <%= image_tag company.logo_url, size: "200x200" %>
     </li>
-    <li class="nav-header">Menu Selections</li>
+    <li>
+      <h3 class="text-center"><%= company.phone %></h3>
+    </li>
+    <li class="divider"></li>
+    <li class="nav-header">
+      Menu Selections
+    </li>
     <li class="active">
       <a href="#">Work</a>
     </li>
@@ -12,6 +18,12 @@
     </li>
     <li>
       <a href="#">Contact</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <div class="center medium-margin">
+        <%= button_to "Get a Quote!", "#", class: "btn btn-info" %>
+      </div>
     </li>
   </ul>
 </div>
