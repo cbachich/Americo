@@ -1,0 +1,10 @@
+<% reverse ||= false %>
+<div class="row well">
+  <%= link_to image_tag(image_url, class: "medium-image"), "#", class: "thumbnail" %>
+  <% class_str = "small-margin"
+     class_str += " pull-right" if reverse %>
+  <blockquote class="<%= class_str %>">
+    <p><%= quote %></p>
+    <small><%= citation %></small>
+  </blockquote>
+</div>

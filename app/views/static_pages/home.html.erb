@@ -5,19 +5,15 @@
     <p><%= company.description.body.html_safe %></p>
   </div>
   <div class="span4 offset1">
-    <div class="row well">
-      <%= link_to image_tag(company.logo_url, size: "300x300"), "#", class: "thumbnail" %>
-      <blockquote class="small-margin">
-        <p>This place rocks!</p>
-        <small>Someone Famous</small>
-      </blockquote>
-    </div>
-    <div class="row well">
-      <%= link_to image_tag(company.logo_url, size: "300x300"), "#", class: "thumbnail" %>
-      <blockquote class="small-margin pull-right">
-        <p>OMG! Like so sweet!</p>
-        <small>Someone Famous</small>
-      </blockquote>
-    </div>
+    <%= render "/shared/single_picture", 
+               image_url: company.logo_url,
+                   quote: "This place rocks!", 
+                citation: "Someone Famous" %>
+    
+    <%= render "/shared/single_picture", 
+               image_url: company.logo_url,
+                   quote: "OMG! Like so sweet!", 
+                citation: "Someone Really Famous",
+                 reverse: true %>
   </div>
 </div>
