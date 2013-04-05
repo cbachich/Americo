@@ -17,3 +17,15 @@
                  reverse: true %>
   </div>
 </div>
+<div class="well row span9">
+  <div>
+    <%= link_to image_tag(company.logo_url), "#", class: "thumbnail img-polaroid" %>
+  </div>
+  <div class="small-margin">
+    <% for i in 1..4 %>
+      <div class="span3">
+        <%= link_to image_tag(company.logo_url), "#", class: "thumbnail img-polaroid" %>
+      </div>
+    <% end %>
+  </div>
+</div>
