@@ -1,5 +1,16 @@
-<%= image_tag @page.banner_img_url %>
-<div class="row">
+<div class="row medium-margin">
+  <div class="banner-box" style="background-image:url('<%= @page.banner_img_url %>')">
+    <div class="banner-text">
+      <h1><%= @page.name %></h1>
+      <ul class="banner-list">
+        <li>Cool information 1</li>
+        <li>Cool information 2</li>
+        <li>Cool information 3</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row medium-margin">
   <div class="well span6">
     <h3><%= @page.description.title %></h3>
     <p><%= @page.description.body.html_safe %></p>
