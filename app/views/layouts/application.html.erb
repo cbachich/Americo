@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%= yield :head %>
 </head>
 <body>
 
@@ -12,8 +13,9 @@
     <aside class="span3">
       <%= render 'layouts/sidebar' %>
     </aside>
-    <div class="span9">
-      <%= yield %>
+    <%= render 'layouts/topbar' %>
+    <div class="span9 offset3">
+        <%= yield %>
     </div>
   </div>
 

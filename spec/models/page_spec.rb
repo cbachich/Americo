@@ -7,6 +7,8 @@
 #  banner_img_url :string(255)
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  title          :string(255)
+#  company_id     :integer
 #
 
 require 'spec_helper'

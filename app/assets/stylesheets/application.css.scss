@@ -35,6 +35,22 @@
   height: 100%;
 }
 
+.topbar-box {
+  width: 180px;
+  height: 75px;
+}
+
+.topbar-text {
+  margin: 0;
+  padding: 40px 0 0 0;
+  text-align: center;
+  color: white;
+}
+
+.topbar-text.selected {
+  padding: 35px 0 0 0;
+}
+
 .banner-box {
   width: 800px;
   height: 250px;
@@ -43,6 +59,10 @@
 .banner-text {
   margin: 0;
   padding: 50px 0px 0px 50px;
+}
+
+a.keep-inline {
+  float: left;
 }
 
 .banner-list {

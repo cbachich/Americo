@@ -15,6 +15,7 @@ class Company < ActiveRecord::Base
   attr_accessible :title, :logo_url, :phone, :fax
 
   has_one :description
+  has_many :pages
 
   validates :title, presence: true
 end
