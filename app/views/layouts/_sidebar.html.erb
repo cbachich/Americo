@@ -1,7 +1,7 @@
 <div class="well sidebar-nav sidebar-nav-fixed">
   <ul class="nav nav-list">
     <li>
-      <%= image_tag company.logo_url, size: "200x200" %>
+      <%= link_to image_tag(company.logo_url, size: "200x200"), root_url %>
     </li>
     <li>
       <h3 class="text-center"><%= company.phone %></h3>
