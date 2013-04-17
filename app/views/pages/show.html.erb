@@ -1,18 +1,12 @@
 <div class="row medium-margin">
-  <div class="banner-box" style="background-image:url('<%= @page.banner_img_url %>')">
-    <div class="banner-text">
-      <h1><%= @page.title %></h1>
-      <ul class="banner-list">
-        <li>Cool information 1</li>
-        <li>Cool information 2</li>
-        <li>Cool information 3</li>
-      </ul>
-    </div>
-  </div>
+  <%= render '/pages/banner' %> 
 </div>
 <div class="row medium-margin">
-  <div class="well span6">
-    <h3><%= @page.description.title %></h3>
-    <p><%= @page.description.body.html_safe %></p>
-  </div>
+  <% if @page.reversed %>
+    <%= render '/pages/infobox' %>
+    <%= render '/pages/picturebox' %>
+  <% else %>
+    <%= render '/pages/picturebox' %>
+    <%= render '/pages/infobox' %>
+  <% end %>
 </div>

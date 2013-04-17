@@ -5,12 +5,12 @@
     <p><%= company.description.body.html_safe %></p>
   </div>
   <div class="span4 offset1">
-    <%= render "/shared/single_picture", 
+    <%= render "/shared/quoted_picture", 
                image_url: company.logo_url,
                    quote: "This place rocks!", 
                 citation: "Someone Famous" %>
     
-    <%= render "/shared/single_picture", 
+    <%= render "/shared/quoted_picture", 
                image_url: company.logo_url,
                    quote: "OMG! Like so sweet!", 
                 citation: "Someone Really Famous",

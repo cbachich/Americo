@@ -9,6 +9,7 @@
 #  updated_at     :datetime         not null
 #  title          :string(255)
 #  company_id     :integer
+#  reversed       :boolean          default(FALSE)
 #
 
 require 'spec_helper'

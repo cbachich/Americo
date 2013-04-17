@@ -1,0 +1,12 @@
+<div class="banner-box" style="background-image:url('<%= @page.banner_img_url %>')">
+  <% div_class = "banner-text"
+     div_class += " reversed" if @page.reversed %>
+  <div class="<%= div_class %>">
+    <h1><%= @page.title %></h1>
+    <ul class="banner-list">
+      <li>Cool information 1</li>
+      <li>Cool information 2</li>
+      <li>Cool information 3</li>
+    </ul>
+  </div>
+</div>

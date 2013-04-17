@@ -12,6 +12,10 @@
  *= require_tree .
 */
 
+div.well {
+  border: 2px solid #0d6c8c;
+}
+
 .center {
   text-align: center;
 }
@@ -20,6 +24,7 @@
   position: fixed;
   top: 0px;
   bottom: 0px;
+  height: 100%;
 }
 
 .small-margin {
@@ -28,6 +33,10 @@
 
 .medium-margin {
   margin: 30px;
+}
+
+.left-padding {
+  padding-left: 20px;
 }
 
 .medium-image {
@@ -54,11 +63,18 @@
 .banner-box {
   width: 800px;
   height: 250px;
+  border: 2px solid #0d6c8c;
 }
 
 .banner-text {
   margin: 0;
   padding: 50px 0px 0px 50px;
+  color: white;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.banner-text.reversed {
+  padding: 50px 0px 0px 375px;
 }
 
 a.keep-inline {
