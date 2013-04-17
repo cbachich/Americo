@@ -1,10 +1,14 @@
-<%= image_tag company.logo_url %>
+<div class="row medium-margin">
+  <div class="span10">
+    <%= render '/static_pages/carousel' %>
+  </div>
+</div>
 <div class="row">
   <div class="well span6">
     <h3><%= company.description.title %></h3>
     <p><%= company.description.body.html_safe %></p>
   </div>
-  <div class="span4 offset1">
+  <div class="span4 left-padding">
     <%= render "/shared/quoted_picture", 
                image_url: company.logo_url,
                    quote: "This place rocks!", 
@@ -17,15 +21,17 @@
                  reverse: true %>
   </div>
 </div>
-<div class="well row span9">
-  <div>
-    <%= link_to image_tag(company.logo_url), "#", class: "thumbnail img-polaroid" %>
-  </div>
-  <div class="small-margin">
-    <% for i in 1..4 %>
-      <div class="span3">
-        <%= link_to image_tag(company.logo_url), "#", class: "thumbnail img-polaroid" %>
-      </div>
-    <% end %>
+<div class="row">
+  <div class="well span10">
+    <div>
+      <%= link_to image_tag(company.logo_url), "#", class: "thumbnail img-polaroid" %>
+    </div>
+    <div class="small-margin">
+      <% for i in 1..4 %>
+        <div class="span3">
+          <%= link_to image_tag(company.logo_url), "#", class: "thumbnail img-polaroid" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
