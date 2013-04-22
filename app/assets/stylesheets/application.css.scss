@@ -20,13 +20,6 @@ div.well {
   text-align: center;
 }
 
-.sidebar-nav-fixed {
-  position: fixed;
-  top: 0px;
-  bottom: 0px;
-  height: 100%;
-}
-
 .small-margin {
   margin: 10px;
 }
@@ -42,6 +35,77 @@ div.well {
 .medium-image {
   width: 300px;
   height: 100%;
+}
+
+/* overview */
+
+.banner {
+  position: relative;
+  padding-top: 40px;
+  color: white;
+  text-align: center;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4), 0px 0px 30px rgba(0, 0, 0, 0.075);
+  background: #020031; /* Old browsers */
+  background: linear-gradient(45deg, #020031 0%, #0D6C8C 100%) repeat scroll 0% 0% transparent;
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  p {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 80px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+}
+
+/* sidebar */
+
+.affix {
+  top: 25px;
+}
+
+.sidebar {
+  width: 225px;
+  margin: 30px 0 0;
+  background-color: #fff;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+  -moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+  box-shadow: 0 1px 4px rgba(0,0,0,.065);
+
+  li > a {
+    display: block;
+    margin: 0px 0px -1px;
+    padding: 8px 14px;
+    border: 1px solid rgb(229, 229, 229);
+  }
+
+  li:first-child > a {
+    border-radius: 6px 6px 0px 0px;
+  }
+
+  li:last-child > a {
+    border-radius: 0px 0px 6px 6px;
+  }
+
+  .icon-chevron-right {
+    float: right;
+    margin-top: 2px;
+    margin-right: -6px;
+    opacity: .25;
+  }
 }
 
 .topbar-box {
@@ -66,11 +130,21 @@ div.well {
   border: 2px solid #0d6c8c;
 }
 
-.banner-text {
-  margin: 0;
-  padding: 50px 0px 0px 50px;
+.page-banner {
+  background: #020031; /* Old browsers */
+  background: linear-gradient(45deg, #020031 0%, #0D6C8C 100%) repeat scroll 0% 0% transparent;
+
   color: white;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  padding-left: 40px;
+
+  h1 {
+    padding-top: 20px;
+  }
+
+  ul {
+    padding-bottom: 20px;
+  }
 }
 
 .banner-text.reversed {
