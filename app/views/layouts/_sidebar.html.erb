@@ -1,5 +1,5 @@
 <ul data-spy="affix" data-offset-top="180" id="sidebar" class="nav nav-list sidebar">
-  <% company.pages.each do |page| %>
+  <% @sheet.pages.each do |page| %>
     <% li_class = ""
        if !@page.nil? && (@page.name == page.name)
          li_class += "active"

@@ -13,12 +13,16 @@
   <%= render 'layouts/overview' %>
   <div class="container">
     <div class="row">
-      <div class="span3">
-        <%= render 'layouts/sidebar' %>
-      </div>
-      <div class="span9">
+      <% if @sheet.nil? %>
         <%= yield %>
-      </div>
+      <% else %>
+        <div class="span3">
+          <%= render 'layouts/sidebar' %>
+        </div>
+        <div class="span9">
+          <%= yield %>
+        </div>
+      <% end %>
     </div>
   </div>
 

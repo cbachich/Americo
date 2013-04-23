@@ -9,6 +9,7 @@
 #  updated_at :datetime         not null
 #  company_id :integer
 #  page_id    :integer
+#  sheet_id   :integer
 #
 
 require 'spec_helper'

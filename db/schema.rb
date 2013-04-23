@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130417140242) do
+ActiveRecord::Schema.define(:version => 20130423150909) do
 
   create_table "companies", :force => true do |t|
     t.string   "title"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20130417140242) do
     t.datetime "updated_at", :null => false
     t.integer  "company_id"
     t.integer  "page_id"
+    t.integer  "sheet_id"
   end
 
   create_table "pages", :force => true do |t|
@@ -37,8 +38,17 @@ ActiveRecord::Schema.define(:version => 20130417140242) do
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
     t.string   "title"
-    t.integer  "company_id"
     t.boolean  "reversed",       :default => false
+    t.integer  "sheet_id"
   end
+
+  create_table "sheets", :force => true do |t|
+    t.string   "name"
+    t.integer  "company_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "sheets", ["company_id"], :name => "index_sheets_on_company_id"
 
 end

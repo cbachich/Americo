@@ -8,13 +8,14 @@
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  title          :string(255)
-#  company_id     :integer
 #  reversed       :boolean          default(FALSE)
+#  sheet_id       :integer
 #
 
 class Page < ActiveRecord::Base
+  belongs_to :sheet
+
   attr_accessible :banner_img_url, :name
 
   has_one :description 
-  belongs_to :company
 end
