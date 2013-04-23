@@ -3,19 +3,11 @@
     <%= render '/pages/banner', page: page %> 
     <div class="row">
       <% if page.reversed %>
-        <div class="span6">
-          <%= render '/pages/infobox', page: page %>
-        </div>
-        <div class="span3">
-          <%= render '/pages/picturebox', page: page %>
-        </div>
+        <%= render '/pages/infobox', page: page %>
+        <%= render '/pages/picturebox', page: page %>
       <% else %>
-        <div class="span3">
-          <%= render '/pages/picturebox', page: page %>
-        </div>
-        <div class="span6">
-          <%= render '/pages/infobox', page: page %>
-        </div>
+        <%= render '/pages/picturebox', page: page %>
+        <%= render '/pages/infobox', page: page %>
       <% end %>
     </div>
   </section>
