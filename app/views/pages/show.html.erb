@@ -1,12 +1,22 @@
-<div class="row medium-margin">
-  <%= render '/pages/banner' %> 
-</div>
-<div class="row medium-margin">
-  <% if @page.reversed %>
-    <%= render '/pages/infobox' %>
-    <%= render '/pages/picturebox' %>
-  <% else %>
-    <%= render '/pages/picturebox' %>
-    <%= render '/pages/infobox' %>
-  <% end %>
-</div>
+<% company.pages.each do |page| %>
+  <section id="<%= page.name %>">
+    <%= render '/pages/banner', page: page %> 
+    <div class="row">
+      <% if page.reversed %>
+        <div class="span6">
+          <%= render '/pages/infobox', page: page %>
+        </div>
+        <div class="span3">
+          <%= render '/pages/picturebox', page: page %>
+        </div>
+      <% else %>
+        <div class="span3">
+          <%= render '/pages/picturebox', page: page %>
+        </div>
+        <div class="span6">
+          <%= render '/pages/infobox', page: page %>
+        </div>
+      <% end %>
+    </div>
+  </section>
+<% end %>

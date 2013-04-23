@@ -12,9 +12,6 @@
  *= require_tree .
 */
 
-div.well {
-  border: 2px solid #0d6c8c;
-}
 
 .center {
   text-align: center;
@@ -46,7 +43,7 @@ div.well {
   text-align: center;
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4), 0px 0px 30px rgba(0, 0, 0, 0.075);
   background: #020031; /* Old browsers */
-  background: linear-gradient(45deg, #020031 0%, #0D6C8C 100%) repeat scroll 0% 0% transparent;
+  background: linear-gradient(45deg, #0D6C8C 0%, #020031 100%) repeat scroll 0% 0% transparent;
 
   .container {
     position: relative;
@@ -130,13 +127,22 @@ div.well {
   border: 2px solid #0d6c8c;
 }
 
+/* Pages */
+
+section {
+  margin-top: 20px;
+
+  .row {
+    margin-bottom: 20px;
+  }
+}
+
 .page-banner {
   background: #020031; /* Old browsers */
   background: linear-gradient(45deg, #020031 0%, #0D6C8C 100%) repeat scroll 0% 0% transparent;
 
   color: white;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  padding-left: 40px;
 
   h1 {
     padding-top: 20px;
@@ -144,6 +150,25 @@ div.well {
 
   ul {
     padding-bottom: 20px;
+  }
+
+  h1, ul {
+    padding-left: 40px;
+  }
+
+  img {
+    width: 250px;
+    padding: 10px;
+  }
+
+}
+
+.picture-box {
+  img {
+    border: 1px solid rgb(229, 229, 229);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

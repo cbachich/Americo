@@ -1,12 +1,13 @@
-<div class="page-banner">
-  <% div_class = ""
-     div_class += "reversed" if @page.reversed %>
-  <div class="<%= div_class %>">
-    <h1><%= @page.title %></h1>
+<div class="row page-banner">
+  <div class="span5">
+    <h1><%= page.title %></h1>
     <ul class="banner-list">
       <li>Cool information 1</li>
       <li>Cool information 2</li>
       <li>Cool information 3</li>
     </ul>
+  </div>
+  <div class="span4">
+    <%= image_tag "/images/sample_img_banner.jpg", class: "img-circle" %>
   </div>
 </div>

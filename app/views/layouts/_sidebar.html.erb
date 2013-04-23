@@ -1,11 +1,11 @@
-<ul data-spy="affix" data-offset-top="180" class="nav nav-list sidebar">
+<ul data-spy="affix" data-offset-top="180" id="sidebar" class="nav nav-list sidebar">
   <% company.pages.each do |page| %>
     <% li_class = ""
        if !@page.nil? && (@page.name == page.name)
          li_class += "active"
        end %>
     <li class="<%= li_class %>">
-      <a href="<%= page.name %>">
+      <a href="#<%= page.name %>">
         <i class="icon-chevron-right"></i>
         <%= page.title %> 
       </a>
@@ -14,5 +14,5 @@
 </ul>
 
 <script type="text/javascript">
-  $('#navbar').affix()
+  query('#sidebar').affix()
 </script>
