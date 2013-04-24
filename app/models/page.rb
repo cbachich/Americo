@@ -15,7 +15,7 @@
 class Page < ActiveRecord::Base
   belongs_to :sheet
 
-  attr_accessible :banner_img_url, :name
+  attr_accessible :banner_img_url, :name, :title, :reversed
 
   has_one :description 
 end
