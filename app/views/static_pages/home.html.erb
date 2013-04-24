@@ -1,37 +1,23 @@
-<div class="row medium-margin">
-  <div class="span10">
-    <%= render '/static_pages/carousel' %>
-  </div>
-</div>
-<div class="row">
-  <div class="well span6">
-    <h3><%= company.description.title %></h3>
+<div class="row home">
+  <div class="span6 offset1">
     <p><%= company.description.body.html_safe %></p>
   </div>
-  <div class="span4 left-padding">
+  <div class="span3 offset1">
     <%= render "/shared/quoted_picture", 
-               image_url: company.logo_url,
+               image_url: "/images/sample_img_01.jpg",
                    quote: "This place rocks!", 
                 citation: "Someone Famous" %>
     
     <%= render "/shared/quoted_picture", 
-               image_url: company.logo_url,
+               image_url: "/images/sample_img_02.jpg",
                    quote: "OMG! Like so sweet!", 
                 citation: "Someone Really Famous",
                  reverse: true %>
   </div>
 </div>
-<div class="row">
-  <div class="well span10">
-    <div>
-      <%= link_to image_tag(company.logo_url), "#", class: "thumbnail img-polaroid" %>
-    </div>
-    <div class="small-margin">
-      <% for i in 1..4 %>
-        <div class="span3">
-          <%= link_to image_tag(company.logo_url), "#", class: "thumbnail img-polaroid" %>
-        </div>
-      <% end %>
-    </div>
+<div class="row medium-margin">
+  <div class="span8 offset2">
+    <%= render '/static_pages/carousel' %>
   </div>
 </div>
+

@@ -59,6 +59,12 @@
     letter-spacing: -1px;
     line-height: 1;
   }
+
+  img {
+    margin: 10px;
+    width: 600px;
+    height: 100%;
+  }
 }
 
 /* sidebar */
@@ -98,6 +104,22 @@
     margin-top: 2px;
     margin-right: -6px;
     opacity: .25;
+  }
+}
+
+/* Home Page */
+
+.home {
+  margin-top: 30px;
+  
+  p {
+    font-size: 18px;
+  }
+}
+
+.carousel-caption {
+  a {
+    margin: 10px 0 0 0;
   }
 }
 
