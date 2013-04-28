@@ -1,2 +1,40 @@
 <% provide(:title, "Contact") %>
-<h1>Test</h2>
+<div class="container">
+  <div class="span5 well contact">
+    <%= form_tag("/contact", :method => "get") do %>
+
+        <div class="span4">
+          <legend>Request a Quote</legend>
+        </div>
+
+        <div class="span4">
+          <%= label_tag(:name, "Name") %>
+          <%= text_field_tag(:name) %>
+        </div>
+
+        <div class="span4">
+          <%= label_tag(:email, "Email") %>
+          <%= text_field_tag(:email) %>
+        </div>
+
+        <div class="span4">
+          <%= label_tag(:phone, "Phone") %>
+          <%= text_field_tag(:phone) %>
+        </div>
+
+        <div class="span4">
+          <%= label_tag(:company, "Company") %>
+          <%= text_field_tag(:company) %>
+        </div>
+
+        <div class="span4">
+          <%= label_tag(:comments, "Comments") %>
+          <%= text_area_tag :comments, nil, rows: 10 %>
+        </div>
+
+        <div class="span4">
+          <%= submit_tag "Submit", class: "btn btn-primary" %>
+        </div>
+    <% end %>
+  </div>
+</div>
