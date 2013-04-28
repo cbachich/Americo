@@ -8,42 +8,22 @@
 
   <!-- Carousel items -->
   <div class="carousel-inner">
-    <div class="active item">
-      <img src="images/home_sample_01.jpg" alt="">
-      <div class="carousel-caption">
-        <div class="span5">
-          <h4>Fabrication</h4>
-          <p><%= description %></p>
-        </div>
-        <div class="span2">
-          <%= link_to "Find out more", "services#fabrication", class: "btn btn-primary" %>
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <img src="images/home_sample_02.jpg" alt="">
-      <div class="carousel-caption">
-        <div class="span5">
-          <h4>Machining</h4>
-          <p><%= description %></p>
-        </div>
-        <div class="span2">
-          <%= link_to "Find out more", "services#machining", class: "btn btn-primary" %>
+    <% company.pages.each.with_index do |page, i|
+       item_str = "item"
+       item_str += " active" if i.zero? %>
+      <div class="<%= item_str %>">
+        <img src="<%= page.banner_img_url %>" alt="">
+        <div class="carousel-caption">
+          <div class="span5">
+            <h4><%= page.title %></h4>
+            <p><%= page.description.short_body %></p>
+          </div>
+          <div class="span2">
+            <%= link_to "Find out more", "#{page.sheet.name}##{page.name}", class: "btn btn-primary" %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="item">
-      <img src="images/home_sample_03.jpg" alt="">
-      <div class="carousel-caption">
-        <div class="span5">
-          <h4>Metal</h4>
-          <p><%= description %></p>
-        </div>
-        <div class="span2">
-          <%= link_to "Find out more", "services#metal", class: "btn btn-primary" %>
-        </div>
-      </div>
-    </div>
+    <% end %>
   </div>
 
   <!-- Carousel nav -->

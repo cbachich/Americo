@@ -10,6 +10,7 @@
 #  company_id :integer
 #  page_id    :integer
 #  sheet_id   :integer
+#  short_body :string(255)
 #
 
 require 'spec_helper'

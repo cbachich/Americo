@@ -18,12 +18,9 @@
       end %>
       <a href="<%= "#{sheet.name}##{page.name}" %>">
         <div class="<%= size %>">
-          <%= image_tag page.banner_img_url %>
+          <%= image_tag "/images/sample_img_01.jpg" %>
           <h3><%= page.title %></h3>
-          <p>
-            A very brief description of this content and why you should click
-            this link. Might take up two or three sentences.
-          </p>
+          <p><%= page.description.short_body %></p>
         </div>
       </a>
   <% end %>

@@ -10,6 +10,7 @@
 #  company_id :integer
 #  page_id    :integer
 #  sheet_id   :integer
+#  short_body :string(255)
 #
 
 class Description < ActiveRecord::Base
@@ -17,7 +18,7 @@ class Description < ActiveRecord::Base
   belongs_to :page
   belongs_to :sheet
 
-  attr_accessible :title, :body
+  attr_accessible :title, :short_body, :body
 
   validates :title, presence: true
   validates :body, presence: true

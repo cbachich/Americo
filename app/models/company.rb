@@ -18,4 +18,12 @@ class Company < ActiveRecord::Base
   has_many :sheets
 
   validates :title, presence: true
+
+  def pages
+    pages = []
+    sheets.each do |sheet|
+      pages += sheet.pages
+    end
+    pages
+  end
 end
