@@ -1,23 +1,31 @@
 <div class="row home">
-  <div class="span6 offset1">
-    <p><%= company.description.body.html_safe %></p>
-  </div>
-  <div class="span3 offset1">
-    <%= render "/shared/quoted_picture", 
-               image_url: "/images/sample_img_01.jpg",
-                   quote: "This place rocks!", 
-                citation: "Someone Famous" %>
-    
-    <%= render "/shared/quoted_picture", 
-               image_url: "/images/sample_img_02.jpg",
-                   quote: "OMG! Like so sweet!", 
-                citation: "Someone Really Famous",
-                 reverse: true %>
-  </div>
-</div>
-<div class="row medium-margin">
-  <div class="span8 offset2">
+  <div class="span6">
     <%= render '/static_pages/carousel' %>
+  </div>
+  <div class="span6">
+    <p><%= company.description.body.html_safe %></p>
   </div>
 </div>
 
+<% company.sheets.each do |sheet| %>
+  <div class="row contents">
+    <h1><%= sheet.description.title %></h1>
+    <p class="byline">Few words on this sheet's content.</p>
+    <% sheet.pages.each.with_index do |page,i| 
+      size = "span2"
+      if i.zero?
+        size += " offset" + ((12-(sheet.pages.count*2))/2).to_s
+      end %>
+      <a href="<%= "#{sheet.name}##{page.name}" %>">
+        <div class="<%= size %>">
+          <%= image_tag page.banner_img_url %>
+          <h3><%= page.title %></h3>
+          <p>
+            A very brief description of this content and why you should click
+            this link. Might take up two or three sentences.
+          </p>
+        </div>
+      </a>
+  <% end %>
+  </div>
+<% end %>
