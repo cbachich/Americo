@@ -6,6 +6,7 @@
         <%= company.title %>
       </a>
       <ul class="nav">
+        <li><%= link_to "Home", root_url %></li>
         <% company.sheets.each do |sheet| %>
           <li><%= link_to sheet.description.title, "#{sheet.name}" %></li>
         <% end %>
