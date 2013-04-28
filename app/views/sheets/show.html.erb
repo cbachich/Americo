@@ -1,3 +1,4 @@
+<% provide(:title, @sheet.description.title) %> 
 <% @sheet.pages.each do |page| %>
   <section id="<%= page.name %>">
     <%= render '/sheets/banner', page: page %> 
