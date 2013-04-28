@@ -16,10 +16,10 @@
       <% if @sheet.nil? %>
         <%= yield %>
       <% else %>
-        <div class="span3">
+        <div class="span2">
           <%= render 'layouts/sidebar' %>
         </div>
-        <div class="span9">
+        <div class="span9 offset1">
           <%= yield %>
         </div>
       <% end %>

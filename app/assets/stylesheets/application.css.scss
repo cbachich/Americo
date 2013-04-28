@@ -12,6 +12,8 @@
  *= require_tree .
 */
 
+$lightBlue: #0D6C8C;
+$darkBlue: #020031;
 
 .small-margin {
   margin: 10px;
@@ -39,7 +41,7 @@
   text-align: center;
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4), 0px 0px 30px rgba(0, 0, 0, 0.075);
   background: #020031; /* Old browsers */
-  background: linear-gradient(45deg, #0D6C8C 0%, #020031 100%) repeat scroll 0% 0% transparent;
+  background: linear-gradient(45deg, $darkBlue 0%, $lightBlue 100%) repeat scroll 0% 0% transparent;
 
   .container {
     position: relative;
@@ -74,8 +76,7 @@
 }
 
 .sidebar {
-  width: 225px;
-  margin: 30px 0 0;
+  margin: 30px 0px;
   background-color: #fff;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -169,7 +170,8 @@ section {
 
 .page-banner {
   background: #020031; /* Old browsers */
-  background: linear-gradient(45deg, #020031 0%, #0D6C8C 100%) repeat scroll 0% 0% transparent;
+  background: linear-gradient(45deg, $darkBlue 0%, $lightBlue 100%) repeat scroll 0% 0% transparent;
+  border-radius: 70px;
 
   color: white;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
