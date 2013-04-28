@@ -11,8 +11,32 @@
           <li><%= link_to sheet.description.title, "#{sheet.name}" %></li>
         <% end %>
         <li><a href="contact">Contact</a></li>
-        <li><a href="contact">Get a Quote!</a></li>
+        <a href="#quoteModal" role="button" class="btn btn-info" data-toggle="modal">Get a Quote!</a>
       </ul>
     </div>
   </div>
 </div>
+
+<!-- Modal -->
+<div id="quoteModal" 
+     class="modal hide fade" 
+     tabindex="-1" 
+     role="dialog" 
+     aria-labelledby="quoteModalLabel" 
+     aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="quoteModalLabel">Request a Quote</h3>
+  </div>
+  <div class="modal-body">
+    <%= render '/shared/quote' %>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Submit</button>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#quoteModal').modal(options)
+</script>

@@ -2,35 +2,13 @@
 <div class="container contact">
   <div class="span5 quote">
     <%= form_tag("/contact", :method => "get") do %>
-
-        <div class="span4 space-top">
-          <legend>Request a Quote</legend>
-
-          <p>
-            For a quote or questions, please fill out this online form. A 
-            representative will contact you within 1 to 3 business days. If you 
-            need a faster response, please call us at 
-            <strong><%= company.phone %></strong>.
-          </p>
-          <%= label_tag(:name, "Name") %>
-          <%= text_field_tag(:name) %>
-
-          <%= label_tag(:email, "Email") %>
-          <%= text_field_tag(:email) %>
-
-          <%= label_tag(:phone, "Phone") %>
-          <%= text_field_tag(:phone) %>
-
-          <%= label_tag(:company, "Company") %>
-          <%= text_field_tag(:company) %>
-
-          <%= label_tag(:comments, "Comments") %>
-          <%= text_area_tag :comments, nil, rows: 10 %>
-        </div>
-
-        <div class="span4 space-bottom">
-          <%= submit_tag "Submit", class: "btn btn-primary" %>
-        </div>
+      <div class="span4 space-top">
+        <legend>Request a Quote</legend>
+        <%= render '/shared/quote' %>
+      </div>
+      <div class="span4 space-bottom">
+        <%= submit_tag "Submit", class: "btn btn-primary" %>
+      </div>
     <% end %>
   </div>
   <div class="span5 offset1 directions">
