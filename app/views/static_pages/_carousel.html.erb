@@ -1,9 +1,13 @@
-<% description = "This contains a whole bunch of text that is used to describe what the user is currently looking at. This description shouldn't be longer than two or three sentences." %>
 <div id="myCarousel" class="carousel slide">
   <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <% for i in 0..company.pages.count %>
+      <% if i==0 %>
+        <li data-target="#myCarousel" data-slide-to="<%= i %>" class="active">
+      <% else %>
+        <li data-target="#myCarousel" data-slide-to="1">
+      <% end %>
+      </li>
+    <% end %>
   </ol>
 
   <!-- Carousel items -->
