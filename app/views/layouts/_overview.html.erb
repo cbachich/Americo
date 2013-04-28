@@ -1,17 +1,15 @@
-<% if @sheet.nil?
-     summary = company.description.title
-   else
-     summary = @sheet.description.body
+<% if (defined? @title).nil?
+     @summary = company.description.title
    end %>
 <header id="overview" class="banner">
   <div class="container">
-    <% if @sheet.nil? %>
+    <% if (defined? @title).nil? %>
       <%= image_tag company.logo_url %>
     <% else %>
-      <h1><%= @sheet.description.title %></h1>
+      <h1><%= @title %></h1>
     <% end %>
     <p>
-      <%= summary %> 
+      <%= @summary %> 
     </p>
   </div>
 </header>

@@ -4,6 +4,7 @@ Americo::Application.routes.draw do
 
   root to: 'static_pages#home'
 
+  match '/contact', to: 'contacts#show'
   match ':name' => 'sheets#show', as: :show
 
   # The priority is based upon order of creation:
