@@ -6,7 +6,7 @@ p_short = "This is a short one or two sentence description for the page. It is u
 p_desc = "This will be a few paragraphs describing this subcontent. It should provide more detail about this type of things we do for this kind of work. The idea here is we want to capture the customer's attention if this is what they are specifically looking for.<br><br>So the more detail here the better! We should talk about some of the past projects we've supported and maybe even plans for the future.<br><br>We might want to talk about the type of tools/machinery/experience for this specific task. We also might want to provide some pictures in between this text. Will need to look into that."
 
 # Start by building the company's high level information
-c = Company.create(title: "AmeriCo Inc", logo_url: "/images/americo_logo_ultra.png", phone: "(719) 475-2199", fax: "(719) 475-2199")
+c = Company.create(title: "AmeriCo Inc", logo_url: "/images/americo_logo_ultra.png", phone: "(719) 475-2199", fax: "(719) 475-2186")
 
 # Add the overall description of the company that will be seen on the home page
 c.description = Description.create(title: "Quality Service For Over 25 Years", body: "This is a body of text that will describe how great this company is. It will include a little information on the history of the company, as well as what type of work they currently do.<br><br>There will be multiple paragraphs, so I want to add a few just to see how it looks on the page. Hopefully there will be enough detail in these few paragraphs to hook the customer into finding out more about the company.<br><br>Maybe we should even invite the customer to learn more or contact us to get a quote. Actually we really should include a link under this paragraph for getting a quote!")
