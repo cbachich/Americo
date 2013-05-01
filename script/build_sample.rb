@@ -25,7 +25,7 @@ ss_names =
   ]
 
 ss_names.each_with_index do |p,i|
-  image = "images/home_sample_0" + (((i+1)%3)+1).to_s + ".jpg"
+  image = "images/" + p[:name] + "_big.jpg"
   p = ss.pages.create(
     name: p[:name], 
     banner_img_url: image, 
@@ -46,7 +46,7 @@ as_names =
   ]
 
 as_names.each_with_index do |p,i|
-  image = "images/home_sample_0" + (((i+1)%3)+1).to_s + ".jpg"
+  image = "images/" + p[:name] + "_big.jpg"
   p = as.pages.create(
     name: p[:name], 
     banner_img_url: image, 
