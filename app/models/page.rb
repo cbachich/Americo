@@ -18,4 +18,5 @@ class Page < ActiveRecord::Base
   attr_accessible :banner_img_url, :name, :title, :reversed
 
   has_one :description 
+  has_many :pictures
 end
