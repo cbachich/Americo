@@ -1,8 +1,7 @@
 <div class="span3">
-  <% page.pictures.each do |picture| %>
+  <% page.pictures.each.with_index do |picture, i| %>
     <%= render "/shared/single_picture", 
-                image_url: picture.url,
-                title: picture.description.title, 
-                text: picture.description.body %>
+               modal: page.name + "_" + i.to_s + "_modal", 
+               picture: picture %>
   <% end %>
 </div>

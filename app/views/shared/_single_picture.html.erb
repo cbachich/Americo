@@ -1,7 +1,22 @@
 <div class="well row">
-  <a href="#" class="thumbnail">
-    <img src="<%= image_url %>">
+  <a href="#<%= modal %>" class="thumbnail" data-toggle="modal">
+    <img src="<%= picture.url %>">
   </a>
-  <h4><%= title %></h4>
-  <p><%= text %></p>
+  <h4><%= picture.description.title %></h4>
+  <p><%= picture.description.body %></p>
 </div>
+
+<!-- Modal -->
+<div id="<%= modal %>" 
+     class="modal hide fade" 
+     tabindex="-1" 
+     role="dialog" 
+     aria-hidden="true">
+  <div class="modal-body">
+    <img src="<%= picture.url %>">
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#pictureModal').modal(options)
+</script>
