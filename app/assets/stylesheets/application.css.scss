@@ -118,7 +118,6 @@ $grayMediumLight: #eaeaea;
 
 footer {
   margin-top: 45px;
-  padding-top: 10px;
   border-top: 1px solid $grayMediumLight;
   color: $grayLight;
 
@@ -135,6 +134,10 @@ footer {
       margin-left: 10px;
       margin-bottom: 5px;
     }
+  }
+
+  .row {
+    padding-top: 10px;
   }
 }
 
