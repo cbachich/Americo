@@ -10,7 +10,10 @@
 <body data-spy="scroll" data-target=".sidebar">
 
   <%= render 'layouts/navbar' %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   <%= render 'layouts/overview' %>
+  <%= render 'shared/session' %>
   <div class="container">
     <div class="row">
       <% if @sheet.nil? %>

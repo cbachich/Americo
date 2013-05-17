@@ -1,11 +1,14 @@
 Americo::Application.routes.draw do
 
+  devise_for :admins
+
   get "static_pages/home"
 
   root to: 'static_pages#home'
 
   match '/contact', to: 'contacts#show'
-  match ':name' => 'sheets#show', as: :show
+  match "/about" => 'sheets#about', as: :show
+  match "/services" => 'sheets#services', as: :show
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
