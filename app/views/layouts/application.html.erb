@@ -10,24 +10,16 @@
 <body data-spy="scroll" data-target=".sidebar">
 
   <%= render 'layouts/navbar' %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
   <%= render 'layouts/overview' %>
-  <%= render 'shared/session' %>
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+  <% end %>
   <div class="container">
     <div class="row">
-      <% if @sheet.nil? %>
-        <%= yield %>
-      <% else %>
-        <div class="span2">
-          <%= render 'layouts/sidebar' %>
-        </div>
-        <div class="span9 offset1">
-          <%= yield %>
-        </div>
-      <% end %>
+      <%= yield %>
     </div>
   </div>
+  <%= render 'layouts/footer' %>
 
   <script type="text/javascript">
     $('body').scrollspy()

@@ -11,9 +11,11 @@
  *= require_self
  *= require_tree .
 */
+@import "bootstrap";
 
 $lightBlue: #0D6C8C;
 $darkBlue: #020031;
+$grayMediumLight: #eaeaea;
 
 .small-margin {
   margin: 10px;
@@ -109,6 +111,30 @@ $darkBlue: #020031;
     margin-top: 2px;
     margin-right: -6px;
     opacity: .25;
+  }
+}
+
+/* Footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 10px;
+  border-top: 1px solid $grayMediumLight;
+  color: $grayLight;
+
+  a {
+    color: $gray;
+
+    &:hover {
+      color: $grayDarker;
+    }
+  }
+
+  ul {
+    li {
+      margin-left: 10px;
+      margin-bottom: 5px;
+    }
   }
 }
 

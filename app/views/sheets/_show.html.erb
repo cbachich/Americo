@@ -1,14 +1,19 @@
-<% @sheet.pages.each do |page| %>
-  <section id="<%= page.name %>">
-    <%= render '/sheets/banner', page: page %> 
-    <div class="row">
-      <% if page.reversed %>
-        <%= render '/sheets/infobox', page: page %>
-        <%= render '/sheets/picturebox', page: page %>
-      <% else %>
-        <%= render '/sheets/picturebox', page: page %>
-        <%= render '/sheets/infobox', page: page %>
-      <% end %>
-    </div>
-  </section>
-<% end %>
+<div class="span2">
+  <%= render 'layouts/sidebar' %>
+</div>
+<div class="span9 offset1">
+  <% @sheet.pages.each do |page| %>
+    <section id="<%= page.name %>">
+      <%= render '/sheets/banner', page: page %> 
+      <div class="row">
+        <% if page.reversed %>
+          <%= render '/sheets/infobox', page: page %>
+          <%= render '/sheets/picturebox', page: page %>
+        <% else %>
+          <%= render '/sheets/picturebox', page: page %>
+          <%= render '/sheets/infobox', page: page %>
+        <% end %>
+      </div>
+    </section>
+  <% end %>
+</div>

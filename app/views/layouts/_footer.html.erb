@@ -1,0 +1,37 @@
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="span2 offset2">
+        <ul>
+          <li><%= link_to "Home", root_path %></li>
+        </ul>
+      </div>
+      <% company.sheets.each do |sheet| %>
+        <div class="span2">
+          <ul>
+            <li>
+              <%= link_to sheet.description.title, "#{sheet.name}" %>
+            </li>
+            <ul>
+              <% sheet.pages.each do |page| %>
+                <li>
+                <%= link_to page.title, "#{sheet.name}##{page.name}" %></li>
+              <% end %>
+            </ul>
+          </ul>
+        </div>
+      <% end %>
+      <div class="span2">
+        <ul>
+          <li><%= link_to "Contact", contact_path %></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <p class="text-center">
+        Designed by Christopher Bachicha. <%= render 'shared/session' %>
+      </p>
+    </div>
+  </div>
+</footer>
