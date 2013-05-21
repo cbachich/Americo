@@ -19,4 +19,16 @@ class Page < ActiveRecord::Base
 
   has_one :description 
   has_many :pictures
+
+  def subtitle
+    description.title
+  end
+
+  def short_body
+    description.short_body
+  end
+
+  def body
+    description.body
+  end
 end

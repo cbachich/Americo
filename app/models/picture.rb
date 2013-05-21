@@ -15,4 +15,12 @@ class Picture < ActiveRecord::Base
   attr_accessible :url
 
   has_one :description
+
+  def title
+    description.title
+  end
+
+  def subtitle
+    description.body
+  end
 end

@@ -1,0 +1,55 @@
+<%= form_tag(:home_change) do %>
+  <div class="span10 offset1 space-top">
+    <%= label_tag "#{@sheet.name}_title", "Title" %>
+    <%= text_field_tag "#{@sheet.name}_title", @sheet.title %>
+
+    <%= label_tag "#{@sheet.name}_subtitle", "Subtitle" %>
+    <%= text_area_tag "#{@sheet.name}_subtitle", @sheet.subtitle, rows: 2, style: "width: 100%" %>
+
+    <% @sheet.pages.each do |page| %>
+      <div class="row">
+        <h2 class="text-center"><%= page.title %></h2>
+        <div class="span5">
+          <% page_s = "#{@sheet.name}_#{page.name}" %>
+          <%= label_tag "#{page_s}_name", "Name" %>
+          <%= text_field_tag "#{page_s}_name", page.name %>
+
+          <%= label_tag "#{page_s}_title", "Title" %>
+          <%= text_field_tag "#{page_s}_title", page.title %>
+
+          <%= label_tag "#{page_s}_subtitle", "Subtitle" %>
+          <%= text_field_tag "#{page_s}_subtitle", page.subtitle %>
+
+          <%= label_tag "#{page_s}_shortbody", "Short Body" %>
+          <%= text_area_tag "#{page_s}_shortbody", page.short_body, rows: 2, style: "width: 90%" %>
+
+          <%= label_tag "#{page_s}_body", "Body" %>
+          <%= text_area_tag "#{page_s}_body", page.body, rows: 10, style: "width: 90%" %>
+        </div>
+
+        <div class="span5">
+          <% page.pictures.each.with_index do |pic,i| %>
+            <div class="row space-top">
+              <h4 class="text-center">Picture <%= i+1 %></h4>
+              <div class="span2">
+                <%= image_tag pic.url %>
+              </div>
+              <div class="span3">
+                <% pic_s = page_s + "_pic#{i}" %>
+                <%= label_tag "#{pic_s}_title", "Title" %>
+                <%= text_field_tag "#{pic_s}_title", pic.title %>
+
+                <%= label_tag "#{pic_s}_subtitle", "Subtitle" %>
+                <%= text_area_tag "#{pic_s}_subtitle", pic.subtitle, rows: 3, style: "width: 100%" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="span12 text-center space-top">
+    <%= submit_tag "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

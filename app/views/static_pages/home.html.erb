@@ -18,7 +18,7 @@
       end %>
       <a href="<%= "#{sheet.name}##{page.name}" %>">
         <div class="<%= size %>">
-          <img src="<%= page.banner_img_url %>" %>
+          <%= image_tag page.banner_img_url %>
           <h3><%= page.title %></h3>
           <p><%= page.description.short_body %></p>
         </div>

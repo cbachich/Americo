@@ -1,7 +1,7 @@
 <div id="myCarousel" class="carousel slide">
   <ol class="carousel-indicators">
-    <% for i in 0..company.pages.count %>
-      <% if i==0 %>
+    <% for i in 1..company.pages.count %>
+      <% if i==1 %>
         <li data-target="#myCarousel" data-slide-to="<%= i %>" class="active">
       <% else %>
         <li data-target="#myCarousel" data-slide-to="1">
@@ -16,7 +16,7 @@
        item_str = "item"
        item_str += " active" if i.zero? %>
       <div class="<%= item_str %>">
-        <img src="<%= page.banner_img_url %>" alt="">
+        <%= image_tag page.banner_img_url %>
         <div class="carousel-caption">
           <div class="span5">
             <h4><%= page.title %></h4>

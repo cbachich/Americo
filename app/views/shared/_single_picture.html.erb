@@ -1,6 +1,6 @@
 <div class="well row">
   <a href="#<%= modal %>" class="thumbnail" data-toggle="modal">
-    <img src="<%= picture.url %>">
+    <%= image_tag picture.url %>
   </a>
   <h4><%= picture.description.title %></h4>
   <p><%= picture.description.body %></p>
@@ -13,7 +13,7 @@
      role="dialog" 
      aria-hidden="true">
   <div class="modal-body">
-    <img src="<%= picture.url %>">
+    <%= image_tag picture.url %>
   </div>
 </div>
 

@@ -16,4 +16,12 @@ class Sheet < ActiveRecord::Base
   has_many :pages
 
   attr_accessible :name
+
+  def title
+    description.title
+  end
+
+  def subtitle
+    description.body
+  end
 end

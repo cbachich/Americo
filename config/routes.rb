@@ -6,9 +6,19 @@ Americo::Application.routes.draw do
 
   root to: 'static_pages#home'
 
-  match '/contact', to: 'contacts#show'
-  match "/about" => 'sheets#about', as: :show
-  match "/services" => 'sheets#services', as: :show
+  match '/contact',  to: 'contacts#show',   as: :contact
+  match '/about',    to: 'sheets#about',    as: :about
+  match '/services', to: 'sheets#services', as: :services
+
+
+  # Admin Pages
+  match '/admin',          to: 'static_pages#admin'
+  match '/admin/home',     to: 'static_pages#admin_home',     as: :admin_home
+  match '/admin/about',    to: 'static_pages#admin_about',    as: :admin_about
+  match '/admin/services', to: 'static_pages#admin_services', as: :admin_services
+
+  # Form Submittals
+  match '/admin/home_change', to: 'static_pages#home_change', as: :home_change
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
