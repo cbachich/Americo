@@ -12,7 +12,7 @@ Americo::Application.routes.draw do
 
 
   # Admin Pages
-  match '/admin',          to: 'static_pages#admin'
+  match '/admin',          to: 'static_pages#admin',          as: :admin
   match '/admin/home',     to: 'static_pages#admin_home',     as: :admin_home
   match '/admin/about',    to: 'static_pages#admin_about',    as: :admin_about
   match '/admin/services', to: 'static_pages#admin_services', as: :admin_services
