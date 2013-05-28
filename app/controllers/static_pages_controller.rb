@@ -12,17 +12,20 @@ class StaticPagesController < ApplicationController
   def admin
     @title = "Website Setup"
     @summary = "Customize your website"
+    @is_admin_page = true
   end
 
   def admin_home
     @title = "Home Page Setup"
     @summary = "Edit the home page to your liking"
+    @is_admin_page = true
   end
 
   def admin_about
     @sheet = Company.first.sheets.find_by_name("about")
     @title = "About Page Setup"
     @summary = "Edit the about page to your liking"
+    @is_admin_page = true
     render '/static_pages/admin_sheet.html.erb'
   end
 
@@ -30,6 +33,7 @@ class StaticPagesController < ApplicationController
     @sheet = Company.first.sheets.find_by_name("services")
     @title = "Services Page Setup"
     @summary = "Edit the services page to your liking"
+    @is_admin_page = true
     render '/static_pages/admin_sheet.html.erb'
   end
 
