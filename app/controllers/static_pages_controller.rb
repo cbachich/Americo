@@ -1,4 +1,11 @@
 class StaticPagesController < ApplicationController
+
+  before_filter :signed_in_admin, 
+    only: [:admin, 
+           :admin_home, 
+           :admin_about, 
+           :admin_services]
+
   def home
   end
 
@@ -35,4 +42,13 @@ class StaticPagesController < ApplicationController
     flash[:notice] = "This worked!"
     redirect_to '/admin/home'
   end
+
+  private
+
+    def signed_in_admin
+      if !admin_signed_in?
+        flash[:warning] = "Admin not signed in"
+        redirect_to(root_path)
+      end
+    end
 end
