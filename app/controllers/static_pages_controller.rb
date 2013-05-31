@@ -37,14 +37,46 @@ class StaticPagesController < ApplicationController
     render '/static_pages/admin_sheet.html.erb'
   end
 
-  def admin_change
-    flash[:notice] = "This worked!"
-    redirect_to "/admin"
+  def company_change
+    company = Company.first
+    company.title = params[:title]
+    company.phone = params[:phone]
+    company.fax   = params[:fax]
+    save_and_redirect(company)
   end
 
   def home_change
-    flash[:notice] = "This worked!"
-    redirect_to '/admin/home'
+    description = Company.first.description
+    description.title = params[:description]
+    description.body = params[:comments]
+    save_and_redirect(description)
+  end
+
+  def sheet_change
+    sheet = Company.first.sheets.find_by_name(params[:name])
+
+    # Start by grabbing each pages contents
+    sheet.pages.each do |page|
+      name = page.name
+      page.name  = params["#{name}_name"]
+      page.title = params["#{name}_title"]
+      return unless save_or_redirect(page)
+
+      page.description.title = params["#{name}_subtitle"]
+      page.description.short_body = params["#{name}_shortbody"]
+      page.description.body = params["#{name}_body"]
+      return unless save_or_redirect(page.description)
+
+      page.pictures.each do |pic|
+        pic.description.title = params["#{pic.id}_title"]
+        pic.description.body = params["#{pic.id}_subtitle"]
+        return unless save_or_redirect(pic.description)
+      end
+    end
+
+    # Then save the subtitle
+    sheet.description.body = params[:subtitle]
+    save_and_redirect(sheet.description)
   end
 
   private
@@ -54,5 +86,24 @@ class StaticPagesController < ApplicationController
         flash[:warning] = "Admin not signed in"
         redirect_to(root_path)
       end
+    end
+
+    def save_or_redirect(object)
+      if !object.save
+        flash[:error] = "Errors occurred during save"
+        redirect_to :back
+        false
+      else
+        true
+      end
+    end
+
+    def save_and_redirect(object)
+      if object.save
+        flash[:success] = "Saved Changes"
+      else
+        flash[:error] = "Errors occured during save"
+      end
+      redirect_to :back
     end
 end

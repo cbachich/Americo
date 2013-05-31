@@ -18,7 +18,9 @@ Americo::Application.routes.draw do
   match '/admin/services', to: 'static_pages#admin_services', as: :admin_services
 
   # Form Submittals
-  match '/admin/home_change', to: 'static_pages#home_change', as: :home_change
+  match '/admin/company_change', to: 'static_pages#company_change', as: :company_change
+  match '/admin/home_change',    to: 'static_pages#home_change',    as: :home_change
+  match '/admin/sheet_change',   to: 'static_pages#sheet_change',   as: :sheet_change
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

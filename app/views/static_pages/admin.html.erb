@@ -1,9 +1,9 @@
-<%= form_tag("/admin_change", :method => "admin_change") do %>
+<%= form_tag :company_change do %>
   
   <div class="span5 offset1">
     <h2>Company Information</h2>
-    <%= label_tag :company_title, "Title" %>
-    <%= text_field_tag :company_title, company.title %>
+    <%= label_tag :title, "Title" %>
+    <%= text_field_tag :title, company.title %>
 
     <%= label_tag :phone, "Phone Number" %>
     <%= text_field_tag :phone, company.phone %>
@@ -20,7 +20,7 @@
     </ul>
   </div>
 
-  <div class="span10 text-center space-top">
-    <%= submit_tag "Submit", class: "btn btn-primary" %>
+  <div class="span12 text-center space-top">
+    <%= submit_tag "Save Changes", class: "btn btn-large btn-primary" %>
   </div>
 <% end %>

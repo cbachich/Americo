@@ -3,7 +3,7 @@
     <%= render '/static_pages/carousel' %>
   </div>
   <div class="span6">
-    <p><%= company.description.body.html_safe %></p>
+    <p><%= simple_format(company.description.body) %></p>
   </div>
 </div>
 

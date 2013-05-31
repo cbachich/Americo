@@ -1,13 +1,13 @@
 <%= form_tag(:home_change) do %>
   <div class="span10 offset1 space-top">
-    <%= label_tag :home_overview, "Quick Description" %>
-    <%= text_area_tag :home_overview, company.description.title, rows: 1, style: "width: 100%" %>
+    <%= label_tag :description, "Quick Description" %>
+    <%= text_area_tag :description, company.description.title, rows: 1, style: "width: 100%" %>
 
-    <%= label_tag :home_description, "Comments" %>
-    <%= text_area_tag :home_description, company.description.body, rows: 10, style: "width: 100%" %>
+    <%= label_tag :comments, "Comments" %>
+    <%= text_area_tag :comments, company.description.body, rows: 10, style: "width: 100%" %>
   </div>
 
-  <div class="span10 text-center">
-    <%= submit_tag "Submit", class: "btn btn-primary" %>
+  <div class="span12 text-center space-top">
+    <%= submit_tag "Save Changes", class: "btn btn-large btn-primary" %>
   </div>
 <% end %>
