@@ -51,29 +51,22 @@
       <div class="row">
         <% i = 1 %>
         <% page.pictures.each do |pic| %>
-          <div class="span3">
-            <h4 class="text-center">Picture <%= i %></h4>
-            <%= image_tag pic.url, class: "img-polaroid" %>
-            <%= label_tag "#{pic.id}_title", "Title", class: "space-top"%>
-            <%= text_field_tag "#{pic.id}_title", pic.title, style: "width: 95%" %>
-
-            <%= label_tag "#{pic.id}_subtitle", "Subtitle" %>
-            <%= text_area_tag "#{pic.id}_subtitle", pic.subtitle, rows: 3, style: "width: 95%" %>
-          </div>
+          <%= render '/admins/edit_picture',
+                number: i,
+                img_url: pic.url,
+                pic_s: pic.id,
+                title: pic.title,
+                subtitle: pic.subtitle %>
           <% i += 1 %>
         <% end %>
 
         <% while i < 5 %>
-          <div class="span3">
-            <h4 class="text-center">Picture <%= i %></h4>
-            <% pic_s = "#{page.name}_#{i}" %>
-            <%= image_tag 'upload_picture.jpg', class: "img-polaroid" %>
-            <%= label_tag "#{pic_s}_title", "Title", class: "space-top" %>
-            <%= text_field_tag "#{pic_s}_title", '', style: "width: 95%" %>
-
-            <%= label_tag "#{pic_s}_subtitle", "Subtitle" %>
-            <%= text_area_tag "#{pic_s}_subtitle", '', rows: 3, style: "width: 95%" %>
-          </div>
+          <%= render '/admins/edit_picture',
+                number: i,
+                img_url: 'upload_picture.jpg',
+                pic_s: "#{page.name}_#{i}",
+                title: '',
+                subtitle: '' %>
           <% i += 1 %>
         <% end %>
       </div>

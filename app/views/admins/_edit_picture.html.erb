@@ -1,0 +1,9 @@
+<div class="span3">
+  <h4 class="text-center">Picture <%= number %></h4>
+  <%= image_tag img_url, class: "img-polaroid" %>
+  <%= label_tag "#{pic_s}_title", "Title", class: "space-top" %>
+  <%= text_field_tag "#{pic_s}_title", title, style: "width: 95%" %>
+
+  <%= label_tag "#{pic_s}_subtitle", "Subtitle" %>
+  <%= text_area_tag "#{pic_s}_subtitle", subtitle, rows: 3, style: "width: 95%" %>
+</div>
