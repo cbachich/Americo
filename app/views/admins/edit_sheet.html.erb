@@ -1,0 +1,99 @@
+<%= form_tag(:sheet_change) do %>
+  <div class="container">
+    <div class="row">
+      <div class="span10 offset1 space-top">
+        <%= hidden_field_tag :name, @sheet.name %>
+        <%= label_tag :subtitle, "Subtitle" %>
+        <%= text_area_tag :subtitle, @sheet.subtitle, rows: 2, style: "width: 100%" %>
+      </div>
+    </div>
+
+    <% @sheet.pages.each.with_index do |page,i| %>
+      <div class="row space-top">
+        <hr noshade>
+        <div class="span12">
+          <h1>Page <%= i+1 %>: <%= page.title %>
+            <%= link_to "Delete Page", 
+                  delete_page_url(page_id: page.id),
+                  class: "btn btn-mini btn-danger",
+                  confirm: "Are you sure you want to delete #{page.title}?" %> 
+          </h1>
+        </div>
+      </div>
+
+      <div class="row space-top">
+        <div class="span6">
+          <%= label_tag "#{page.name}_name", "Name" %>
+          <%= text_field_tag "#{page.name}_name", page.name %>
+
+          <%= label_tag "#{page.name}_title", "Title" %>
+          <%= text_field_tag "#{page.name}_title", page.title %>
+
+          <%= label_tag "#{page.name}_subtitle", "Subtitle" %>
+          <%= text_field_tag "#{page.name}_subtitle", page.subtitle %>
+
+          <%= label_tag "#{page.name}_shortbody", "Short Body" %>
+          <%= text_area_tag "#{page.name}_shortbody", page.short_body, rows: 2, style: "width: 90%" %>
+        </div>
+
+        <div class="span6">
+          <%= label_tag "#{page.name}_body", "Body" %>
+          <%= text_area_tag "#{page.name}_body", page.body, rows: 12, style: "width: 90%" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span12">
+          <h3>Picture Gallery:</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <% i = 1 %>
+        <% page.pictures.each do |pic| %>
+          <div class="span3">
+            <h4 class="text-center">Picture <%= i %></h4>
+            <%= image_tag pic.url, class: "img-polaroid" %>
+            <%= label_tag "#{pic.id}_title", "Title", class: "space-top"%>
+            <%= text_field_tag "#{pic.id}_title", pic.title, style: "width: 95%" %>
+
+            <%= label_tag "#{pic.id}_subtitle", "Subtitle" %>
+            <%= text_area_tag "#{pic.id}_subtitle", pic.subtitle, rows: 3, style: "width: 95%" %>
+          </div>
+          <% i += 1 %>
+        <% end %>
+
+        <% while i < 5 %>
+          <div class="span3">
+            <h4 class="text-center">Picture <%= i %></h4>
+            <% pic_s = "#{page.name}_#{i}" %>
+            <%= image_tag 'upload_picture.jpg', class: "img-polaroid" %>
+            <%= label_tag "#{pic_s}_title", "Title", class: "space-top" %>
+            <%= text_field_tag "#{pic_s}_title", '', style: "width: 95%" %>
+
+            <%= label_tag "#{pic_s}_subtitle", "Subtitle" %>
+            <%= text_area_tag "#{pic_s}_subtitle", '', rows: 3, style: "width: 95%" %>
+          </div>
+          <% i += 1 %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class="row space-top">
+      <hr noshade>
+      <div class="span12">
+        <h1>Want another page?</h1>
+        <h3>Click this button
+          <%= link_to "Add Page", 
+                add_page_url(sheet_id: @sheet.id),
+                class: "btn btn-small btn-success" %>
+        </h3>
+      </div>
+    </div>
+
+    <hr noshade>
+    <div class="span12 text-center space-top">
+      <%= submit_tag "Save Changes", class: "btn btn-large btn-primary" %>
+    </div>
+  </div>
+<% end %>

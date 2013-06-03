@@ -12,15 +12,19 @@ Americo::Application.routes.draw do
 
 
   # Admin Pages
-  match '/admin',          to: 'static_pages#admin',          as: :admin
-  match '/admin/home',     to: 'static_pages#admin_home',     as: :admin_home
-  match '/admin/about',    to: 'static_pages#admin_about',    as: :admin_about
-  match '/admin/services', to: 'static_pages#admin_services', as: :admin_services
+  match '/admin',          to: 'admins#home',          as: :admin
+  match '/admin/home',     to: 'admins#edit_home',     as: :edit_home
+  match '/admin/about',    to: 'admins#edit_about',    as: :edit_about
+  match '/admin/services', to: 'admins#edit_services', as: :edit_services
 
   # Form Submittals
-  match '/admin/company_change', to: 'static_pages#company_change', as: :company_change
-  match '/admin/home_change',    to: 'static_pages#home_change',    as: :home_change
-  match '/admin/sheet_change',   to: 'static_pages#sheet_change',   as: :sheet_change
+  match '/admin/company_change', to: 'admins#company_change', as: :company_change
+  match '/admin/home_change',    to: 'admins#home_change',    as: :home_change
+  match '/admin/sheet_change',   to: 'admins#sheet_change',   as: :sheet_change
+
+  # Delete and Add Pages
+  match '/admin/add_page/:sheet_id',   to: 'admins#add_page',    as: :add_page
+  match '/admin/delete_page/:page_id', to: 'admins#delete_page', as: :delete_page
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

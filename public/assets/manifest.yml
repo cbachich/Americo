@@ -23,10 +23,12 @@ sample_01.jpg: sample_01-e7cb88f4878f14661db94034fa5e6ca0.jpg
 sample_01/index.jpg: sample_01-e7cb88f4878f14661db94034fa5e6ca0.jpg
 sample_02.jpg: sample_02-6192ea4d045ffaa3bb5afc9f855c0294.jpg
 sample_02/index.jpg: sample_02-6192ea4d045ffaa3bb5afc9f855c0294.jpg
+upload_picture.jpg: upload_picture-051c762df18f9b1cf07e6ab1ef392895.jpg
+upload_picture/index.jpg: upload_picture-051c762df18f9b1cf07e6ab1ef392895.jpg
 application.js: application-6e0004ded19f12c8ddb05e3bfd3958f3.js
 application/index.js: application-6e0004ded19f12c8ddb05e3bfd3958f3.js
-application.css: application-e138d49a2e5aa37e7fc9966fb4247ccf.css
-application/index.css: application-e138d49a2e5aa37e7fc9966fb4247ccf.css
+application.css: application-d685bc0321ef81c210730a4e3636e24d.css
+application/index.css: application-d685bc0321ef81c210730a4e3636e24d.css
 jquery.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
 jquery/index.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
 glyphicons-halflings-white.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png

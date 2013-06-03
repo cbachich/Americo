@@ -3,14 +3,14 @@
     <li class="<%= 'active' if current_page?(admin_url) %>">
       <%= link_to "Company Info", admin_url %>
     </li>
-    <li class="<%= 'active' if current_page?(admin_home_url) %>">
-      <%= link_to "Home Page", admin_home_url %>
+    <li class="<%= 'active' if current_page?(edit_home_url) %>">
+      <%= link_to "Home Page", edit_home_url %>
     </li>
-    <li class="<%= 'active' if current_page?(admin_services_url) %>">
-      <%= link_to "Services Page", admin_services_url %>
+    <li class="<%= 'active' if current_page?(edit_services_url) %>">
+      <%= link_to "Services Page", edit_services_url %>
     </li>
-    <li class="<%= 'active' if current_page?(admin_about_url) %>">
-      <%= link_to "About Page", admin_about_url %>
+    <li class="<%= 'active' if current_page?(edit_about_url) %>">
+      <%= link_to "About Page", edit_about_url %>
     </li>
   </ul>
 </div>
