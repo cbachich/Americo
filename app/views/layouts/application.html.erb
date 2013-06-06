@@ -11,9 +11,7 @@
 
   <%= render 'layouts/navbar' %>
   <%= render 'layouts/overview' %>
-  <% flash.each do |key, value| %>
-    <%= content_tag(:div, value, class: "alert alert-#{key}") %>
-  <% end %>
+  <%= render 'layouts/flashes' %>
   <% if @is_admin_page %>
     <%= render '/shared/admin_nav' %>
   <% end %>
