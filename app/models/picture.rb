@@ -15,12 +15,30 @@ class Picture < ActiveRecord::Base
   attr_accessible :url
 
   has_one :description
+  
+  before_save :save_description
 
   def title
     description.title
   end
 
+  def title=(value)
+    @title = value
+  end
+
   def subtitle
     description.body
   end
+
+  def subtitle=(value)
+    @subtitle = value
+  end
+
+  private
+
+    def save_description
+      description.title = @title
+      description.body = @subtitle
+      description.save
+    end
 end

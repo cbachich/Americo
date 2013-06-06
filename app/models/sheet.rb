@@ -15,6 +15,8 @@ class Sheet < ActiveRecord::Base
   has_one :description
   has_many :pages
 
+  before_update :save_description
+
   attr_accessible :name
 
   def title
@@ -24,4 +26,38 @@ class Sheet < ActiveRecord::Base
   def subtitle
     description.body
   end
+
+  def subtitle=(value)
+    @body = value
+  end
+
+  def update_fields(params)
+    self.subtitle = params[:subtitle]
+
+    errors = false
+    self.pages.each do |page|
+      name = page.name
+      page.name  = params["#{name}_name"]
+      page.title = params["#{name}_title"]
+      page.subtitle = params["#{name}_subtitle"]
+      page.short_body = params["#{name}_shortbody"]
+      page.body = params["#{name}_body"]
+
+      page.pictures.each do |pic|
+        pic.title = params["#{pic.id}_title"]
+        pic.subtitle = params["#{pic.id}_subtitle"]
+        errors = true unless pic.save
+      end
+
+      errors = true unless page.save
+    end
+    errors
+  end
+
+  private
+
+    def save_description
+      description.body = @body
+      description.save
+    end
 end
