@@ -35,21 +35,29 @@ class AdminsController < ApplicationController
     company.title = params[:title]
     company.phone = params[:phone]
     company.fax   = params[:fax]
-    save_and_redirect(company)
+    if company.save
+      redirect_to :back, notice: "Company information was successfully updated."
+    else
+      redirect_to :back
+    end
   end
 
   def update_home
-    description = Company.first.description
-    description.title = params[:description]
-    description.body = params[:comments]
-    save_and_redirect(description)
+    company = Company.first
+    company.quick_description = params[:quick_description]
+    company.summary = params[:summary]
+    if company.save
+      redirect_to :back, notice: "Home section was successfully updated."
+    else
+      redirect_to :back
+    end
   end
 
   def update_sheet
     sheet = Company.first.sheets.find_by_name(params[:name])
     errors = sheet.update_fields(params)
     if sheet.save & !errors
-      redirect_to :back, notice: "Sheet was successfully saved."
+      redirect_to :back, notice: "#{sheet.title} section was successfully updated."
     else
       redirect_to :back
     end
@@ -87,14 +95,4 @@ class AdminsController < ApplicationController
         redirect_to(root_path)
       end
     end
-
-    def save_and_redirect(object)
-      if object.save
-        flash[:success] = "Saved Changes"
-      else
-        flash[:error] = "Errors occured during save"
-      end
-      redirect_to :back
-    end
-
 end

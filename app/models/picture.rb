@@ -17,6 +17,7 @@ class Picture < ActiveRecord::Base
   has_one :description
   
   before_save :save_description
+  after_find :default_values_for_description
 
   def title
     description.title
@@ -35,6 +36,11 @@ class Picture < ActiveRecord::Base
   end
 
   private
+
+    def default_values_for_description
+      @title = description.title
+      @subtitle = description.body
+    end
 
     def save_description
       description.title = @title

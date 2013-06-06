@@ -15,12 +15,17 @@ class Sheet < ActiveRecord::Base
   has_one :description
   has_many :pages
 
-  before_update :save_description
-
   attr_accessible :name
+
+  before_update :save_description
+  after_find :default_values_for_description
 
   def title
     description.title
+  end
+
+  def title=(value)
+    @title = value
   end
 
   def subtitle
@@ -56,7 +61,13 @@ class Sheet < ActiveRecord::Base
 
   private
 
+    def default_values_for_description
+      @title = description.title
+      @body = description.body
+    end
+
     def save_description
+      description.title = @title
       description.body = @body
       description.save
     end

@@ -19,6 +19,25 @@ class Company < ActiveRecord::Base
 
   validates :title, presence: true
 
+  before_save :save_description
+  after_find :default_values_for_description
+
+  def quick_description
+    description.title
+  end
+
+  def quick_description=(value)
+    @quick_description = value
+  end
+
+  def summary
+    description.body
+  end
+
+  def summary=(value)
+    @summary = value
+  end
+
   def pages
     pages = []
     sheets.each do |sheet|
@@ -26,4 +45,17 @@ class Company < ActiveRecord::Base
     end
     pages
   end
+
+  private
+
+    def default_values_for_description
+      @quick_description = description.title
+      @summary = description.body
+    end
+
+    def save_description
+      description.title = @quick_description
+      description.body = @summary
+      description.save
+    end
 end

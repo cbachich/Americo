@@ -21,6 +21,7 @@ class Page < ActiveRecord::Base
   has_many :pictures
 
   before_save :save_description
+  after_find :default_values_for_description
 
   def subtitle
     description.title
@@ -47,6 +48,12 @@ class Page < ActiveRecord::Base
   end
 
   private
+
+    def default_values_for_description
+      @subtitle = description.title
+      @short_body = description.short_body
+      @body = description.body
+    end
 
     def save_description
       description.title = @subtitle
