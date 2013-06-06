@@ -2,7 +2,7 @@ class AdminsController < ApplicationController
 
   before_filter :signed_in_admin 
 
-  def home
+  def edit_company
     @title = "Website Setup"
     @summary = "Customize your website"
     @is_admin_page = true
@@ -30,7 +30,7 @@ class AdminsController < ApplicationController
     render '/admins/edit_sheet.html.erb'
   end
 
-  def company_change
+  def update_company
     company = Company.first
     company.title = params[:title]
     company.phone = params[:phone]
@@ -38,14 +38,14 @@ class AdminsController < ApplicationController
     save_and_redirect(company)
   end
 
-  def home_change
+  def update_home
     description = Company.first.description
     description.title = params[:description]
     description.body = params[:comments]
     save_and_redirect(description)
   end
 
-  def sheet_change
+  def update_sheet
     sheet = Company.first.sheets.find_by_name(params[:name])
     errors = sheet.update_fields(params)
     if sheet.save & !errors

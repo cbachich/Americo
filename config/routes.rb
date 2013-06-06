@@ -12,15 +12,15 @@ Americo::Application.routes.draw do
 
 
   # Admin Pages
-  match '/admin',          to: 'admins#home',          as: :admin
+  match '/admin/company',  to: 'admins#edit_company',  as: :edit_company
   match '/admin/home',     to: 'admins#edit_home',     as: :edit_home
   match '/admin/about',    to: 'admins#edit_about',    as: :edit_about
   match '/admin/services', to: 'admins#edit_services', as: :edit_services
 
   # Form Submittals
-  match '/admin/company_change', to: 'admins#company_change', as: :company_change
-  match '/admin/home_change',    to: 'admins#home_change',    as: :home_change
-  match '/admin/sheet_change',   to: 'admins#sheet_change',   as: :sheet_change
+  match '/admin/update_company', to: 'admins#update_company', as: :update_company
+  match '/admin/update_home',    to: 'admins#update_home',    as: :update_home
+  match '/admin/update_sheet',   to: 'admins#update_sheet',   as: :update_sheet
 
   # Delete and Add Pages
   match '/admin/add_page/:sheet_id',   to: 'admins#add_page',    as: :add_page

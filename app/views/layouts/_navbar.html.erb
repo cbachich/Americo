@@ -20,7 +20,7 @@
         </li>
         <% if admin_signed_in? %>
           <li class="<%= 'active' if @is_admin_page %>">
-            <%= link_to "Modify Website", admin_url %>
+            <%= link_to "Modify Website", edit_company_url %>
           </li>
         <% end %>
         <a href="#quoteModal" role="button" class="btn btn-info" data-toggle="modal">Get a Quote!</a>
