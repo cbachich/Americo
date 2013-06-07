@@ -47,6 +47,7 @@ class Sheet < ActiveRecord::Base
       page.subtitle = params["#{name}_subtitle"]
       page.short_body = params["#{name}_shortbody"]
       page.body = params["#{name}_body"]
+      page.reversed = !params["#{name}_reversed"].nil?
 
       page.pictures.each do |pic|
         pic.title = params["#{pic.id}_title"]

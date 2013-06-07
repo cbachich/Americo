@@ -34,6 +34,9 @@
 
           <%= label_tag "#{page.name}_shortbody", "Short Body" %>
           <%= text_area_tag "#{page.name}_shortbody", page.short_body, rows: 2, style: "width: 90%" %>
+
+          <%= label_tag "#{page.name}_reversed", "Reverse page?" %>
+          <%= check_box_tag "#{page.name}_reversed", 'true', page.reversed %>
         </div>
 
         <div class="span6">
