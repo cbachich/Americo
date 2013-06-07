@@ -4,6 +4,7 @@ Americo::Application.routes.draw do
   as :admin do
     get 'admins/edit' => 'devise/registrations#edit', :as => 'edit_admin_registration'
     put 'admins' => 'devise/registrations#update', :as => 'admin_registration'
+    delete 'admins' => 'devise/registrations#destroy', :as => 'delete_admin_registration'
   end
 
   get "static_pages/home"
