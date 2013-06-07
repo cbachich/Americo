@@ -19,7 +19,7 @@ class Company < ActiveRecord::Base
 
   validates :title, presence: true
 
-  before_save :save_description
+  before_update :save_description
   after_find :default_values_for_description
 
   def quick_description

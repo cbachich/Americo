@@ -20,7 +20,7 @@ class Page < ActiveRecord::Base
   has_one :description 
   has_many :pictures
 
-  before_save :save_description
+  before_update :save_description
   after_find :default_values_for_description
 
   def subtitle
