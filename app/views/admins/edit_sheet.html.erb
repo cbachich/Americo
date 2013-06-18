@@ -1,4 +1,4 @@
-<%= form_tag(:update_sheet) do %>
+<%= form_tag :update_sheet, multipart: true do %>
   <div class="container">
     <div class="row">
       <div class="span10 offset1 space-top">
@@ -52,24 +52,19 @@
       </div>
 
       <div class="row">
-        <% i = 1 %>
+        <% i = 0 %>
         <% page.pictures.each do |pic| %>
           <%= render '/admins/edit_picture',
                 number: i,
-                img_url: pic.url,
-                pic_s: pic.id,
-                title: pic.title,
-                subtitle: pic.subtitle %>
+                page: page,
+                pic: pic %>
           <% i += 1 %>
         <% end %>
 
-        <% while i < 5 %>
+        <% while i < 4 %>
           <%= render '/admins/edit_picture',
                 number: i,
-                img_url: 'upload_picture.jpg',
-                pic_s: "#{page.name}_#{i}",
-                title: '',
-                subtitle: '' %>
+                page: page %>
           <% i += 1 %>
         <% end %>
       </div>

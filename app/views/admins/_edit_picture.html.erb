@@ -1,6 +1,20 @@
+<% 
+  pic_s = "#{page.name}_#{number}"
+  if defined? pic 
+    img_url = pic.image_url
+    title = pic.title
+    subtitle = pic.subtitle
+  else
+    img_url = 'upload_picture.jpg'
+    title = ''
+    subtitle = ''
+  end 
+%>
 <div class="span3">
-  <h4 class="text-center">Picture <%= number %></h4>
+  <h4 class="text-center">Picture <%= number+1 %></h4>
   <%= image_tag img_url, class: "img-polaroid" %>
+  <%= file_field_tag "#{pic_s}_image" %>
+
   <%= label_tag "#{pic_s}_title", "Title", class: "space-top" %>
   <%= text_field_tag "#{pic_s}_title", title, style: "width: 95%" %>
 

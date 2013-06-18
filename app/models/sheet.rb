@@ -49,9 +49,11 @@ class Sheet < ActiveRecord::Base
       page.body = params["#{name}_body"]
       page.reversed = !params["#{name}_reversed"].nil?
 
-      page.pictures.each do |pic|
-        pic.title = params["#{pic.id}_title"]
-        pic.subtitle = params["#{pic.id}_subtitle"]
+      page.pictures.each.with_index do |pic, i|
+        pic_s = "#{page.name}_#{i}"
+        pic.image = params["#{pic_s}_image"] if defined? params["#{pic_s}_image"]
+        pic.title = params["#{pic_s}_title"]
+        pic.subtitle = params["#{pic_s}_subtitle"]
         errors = true unless pic.save
       end
 

@@ -3,16 +3,18 @@
 # Table name: pictures
 #
 #  id         :integer          not null, primary key
-#  url        :string(255)
 #  page_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  image      :string(255)
 #
 
 class Picture < ActiveRecord::Base
   belongs_to :page
 
-  attr_accessible :url
+  mount_uploader :image, ImageUploader
+  
+  attr_accessible :url, :image
 
   has_one :description
   
@@ -33,6 +35,14 @@ class Picture < ActiveRecord::Base
 
   def subtitle=(value)
     @subtitle = value
+  end
+
+  def image_url
+    if image?
+      image
+    else
+      "upload_picture.jpg"
+    end
   end
 
   private
