@@ -32,16 +32,16 @@
           <%= label_tag "#{page.name}_subtitle", "Subtitle" %>
           <%= text_field_tag "#{page.name}_subtitle", page.subtitle %>
 
-          <%= label_tag "#{page.name}_shortbody", "Short Body" %>
-          <%= text_area_tag "#{page.name}_shortbody", page.short_body, rows: 2, style: "width: 90%" %>
+          <%= label_tag "#{page.name}_short", "Short Description" %>
+          <%= text_area_tag "#{page.name}_short", page.short_description, rows: 2, style: "width: 90%" %>
 
           <%= label_tag "#{page.name}_reversed", "Reverse page?" %>
           <%= check_box_tag "#{page.name}_reversed", 'true', page.reversed %>
         </div>
 
         <div class="span6">
-          <%= label_tag "#{page.name}_body", "Body" %>
-          <%= text_area_tag "#{page.name}_body", page.body, rows: 12, style: "width: 90%" %>
+          <%= label_tag "#{page.name}_description", "Description" %>
+          <%= text_area_tag "#{page.name}_description", page.description, rows: 12, style: "width: 90%" %>
         </div>
       </div>
 

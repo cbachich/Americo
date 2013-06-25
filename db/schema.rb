@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130625140941) do
+ActiveRecord::Schema.define(:version => 20130625150612) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(:version => 20130625140941) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "company_id"
-    t.integer  "page_id"
     t.integer  "sheet_id"
     t.string   "short_body"
   end
@@ -64,11 +63,14 @@ ActiveRecord::Schema.define(:version => 20130625140941) do
   create_table "pages", :force => true do |t|
     t.string   "name"
     t.string   "banner_img_url"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
     t.string   "title"
-    t.boolean  "reversed",       :default => false
+    t.boolean  "reversed",          :default => false
     t.integer  "sheet_id"
+    t.string   "short_description"
+    t.text     "description"
+    t.string   "subtitle"
   end
 
   create_table "pictures", :force => true do |t|

@@ -1,5 +1,5 @@
 # These will be used to build generice pages
-p_title = "Something snappy!"
+p_subtitle = "Something Snappy"
 
 p_short = "This is a short one or two sentence description for the page. It is used for pictures and links."
 
@@ -38,8 +38,10 @@ ss_names.each_with_index do |p,i|
     name: p[:name], 
     banner_img_url: image, 
     title: p[:title], 
+    subtitle: p_subtitle,
+    short_description: p_short,
+    description: p_desc,
     reversed: (i+1).even?)
-  p.description = Description.create(title: p_title, short_body: p_short, body: p_desc)
 
   for i in 0..1
     p.pictures.create(title: pics[i][:title], details: pics[i][:details])
@@ -63,8 +65,11 @@ as_names.each_with_index do |p,i|
     name: p[:name], 
     banner_img_url: image, 
     title: p[:title], 
+    subtitle: p_subtitle,
+    short_description: p_short,
+    description: p_desc,
     reversed: (i+1).even?)
-  p.description = Description.create(title: p_title, short_body: p_short, body: p_desc)
+
   for i in 0..1
     p.pictures.create(title: pics[i][:title], details: pics[i][:details])
   end
