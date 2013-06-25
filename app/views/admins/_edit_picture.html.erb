@@ -3,11 +3,11 @@
   if defined? pic 
     img_url = pic.image_url
     title = pic.title
-    subtitle = pic.subtitle
+    details = pic.details
   else
     img_url = 'upload_picture.jpg'
     title = ''
-    subtitle = ''
+    details = ''
   end 
 %>
 <div class="span3">
@@ -18,6 +18,6 @@
   <%= label_tag "#{pic_s}_title", "Title", class: "space-top" %>
   <%= text_field_tag "#{pic_s}_title", title, style: "width: 95%" %>
 
-  <%= label_tag "#{pic_s}_subtitle", "Subtitle" %>
-  <%= text_area_tag "#{pic_s}_subtitle", subtitle, rows: 3, style: "width: 95%" %>
+  <%= label_tag "#{pic_s}_details", "Details" %>
+  <%= text_area_tag "#{pic_s}_details", details, rows: 3, style: "width: 95%" %>
 </div>

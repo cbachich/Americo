@@ -11,7 +11,6 @@
 #  page_id    :integer
 #  sheet_id   :integer
 #  short_body :string(255)
-#  picture_id :integer
 #
 
 require 'spec_helper'

@@ -26,12 +26,10 @@ ss_names =
 
 pics = 
   [
-    { url:   "sample_01.jpg", 
-      title: "Picture Sample 1", 
-      body:  "A little description of picture 1. Should be 1 or 2 sentences." },
-    { url:   "sample_02.jpg", 
-      title: "Picture Sample 2", 
-      body:  "A little description of picture 2. Should be 1 or 2 sentences." }
+    { title: "Picture Sample 1", 
+      details:  "A little description of picture 1. Should be 1 or 2 sentences." },
+    { title: "Picture Sample 2", 
+      details:  "A little description of picture 2. Should be 1 or 2 sentences." }
   ]
 
 ss_names.each_with_index do |p,i|
@@ -42,10 +40,10 @@ ss_names.each_with_index do |p,i|
     title: p[:title], 
     reversed: (i+1).even?)
   p.description = Description.create(title: p_title, short_body: p_short, body: p_desc)
-  pic = p.pictures.create(url: pics[0][:url])
-  pic.description = Description.create(title: pics[0][:title], body: pics[0][:body])
-  pic = p.pictures.create(url: pics[1][:url])
-  pic.description = Description.create(title: pics[1][:title], body: pics[1][:body])
+
+  for i in 0..1
+    p.pictures.create(title: pics[i][:title], details: pics[i][:details])
+  end
 end
 
 # Create a About sheet
@@ -67,9 +65,7 @@ as_names.each_with_index do |p,i|
     title: p[:title], 
     reversed: (i+1).even?)
   p.description = Description.create(title: p_title, short_body: p_short, body: p_desc)
-  pic = p.pictures.create(url: pics[0][:url])
-  pic.description = Description.create(title: pics[0][:title], body: pics[0][:body])
-  pic = p.pictures.create(url: pics[1][:url])
-  pic.description = Description.create(title: pics[1][:title], body: pics[1][:body])
-
+  for i in 0..1
+    p.pictures.create(title: pics[i][:title], details: pics[i][:details])
+  end
 end

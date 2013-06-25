@@ -11,14 +11,12 @@
 #  page_id    :integer
 #  sheet_id   :integer
 #  short_body :string(255)
-#  picture_id :integer
 #
 
 class Description < ActiveRecord::Base
   belongs_to :company
   belongs_to :page
   belongs_to :sheet
-  belongs_to :picture
 
   attr_accessible :title, :short_body, :body
 

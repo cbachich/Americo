@@ -49,12 +49,26 @@ class Sheet < ActiveRecord::Base
       page.body = params["#{name}_body"]
       page.reversed = !params["#{name}_reversed"].nil?
 
-      page.pictures.each.with_index do |pic, i|
+      i = 0
+      page.pictures.each do |pic|
         pic_s = "#{page.name}_#{i}"
+        i += 1
         pic.image = params["#{pic_s}_image"] if defined? params["#{pic_s}_image"]
         pic.title = params["#{pic_s}_title"]
-        pic.subtitle = params["#{pic_s}_subtitle"]
+        pic.details = params["#{pic_s}_details"]
         errors = true unless pic.save
+      end
+
+      while i < 4
+        pic_s = "#{page.name}_#{i}"
+        i += 1
+        pic_image = params["#{pic_s}_image"]
+        if !pic_image.nil?
+          page.pictures.create(
+            title: params["#{pic_s}_title"], 
+            details: params["#{pic_s}_details"],
+            image: pic_image)
+        end
       end
 
       errors = true unless page.save
