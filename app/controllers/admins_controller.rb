@@ -44,7 +44,7 @@ class AdminsController < ApplicationController
 
   def update_home
     company = Company.first
-    company.quick_description = params[:quick_description]
+    company.subtitle = params[:subtitle]
     company.summary = params[:summary]
     if company.save
       redirect_to :back, notice: "Home section was successfully updated."

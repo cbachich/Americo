@@ -9,34 +9,16 @@
 #  fax        :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  subtitle   :string(255)
+#  summary    :string(255)
 #
 
 class Company < ActiveRecord::Base
-  attr_accessible :title, :logo_url, :phone, :fax
+  attr_accessible :title, :subtitle, :summary, :logo_url, :phone, :fax
 
-  has_one :description
   has_many :sheets
 
   validates :title, presence: true
-
-  before_update :save_description
-  after_find :default_values_for_description
-
-  def quick_description
-    description.title
-  end
-
-  def quick_description=(value)
-    @quick_description = value
-  end
-
-  def summary
-    description.body
-  end
-
-  def summary=(value)
-    @summary = value
-  end
 
   def pages
     pages = []
@@ -45,17 +27,4 @@ class Company < ActiveRecord::Base
     end
     pages
   end
-
-  private
-
-    def default_values_for_description
-      @quick_description = description.title
-      @summary = description.body
-    end
-
-    def save_description
-      description.title = @quick_description
-      description.body = @summary
-      description.save
-    end
 end

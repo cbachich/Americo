@@ -1,7 +1,7 @@
 <%= form_tag(:update_home) do %>
   <div class="span10 offset1 space-top">
-    <%= label_tag :quick_description, "Quick Description" %>
-    <%= text_area_tag :quick_description, company.quick_description, rows: 1, style: "width: 100%" %>
+    <%= label_tag :subtitle, "Subtitle" %>
+    <%= text_area_tag :subtitle, company.subtitle, rows: 1, style: "width: 100%" %>
 
     <%= label_tag :summary, "Summary" %>
     <%= text_area_tag :summary, company.summary, rows: 10, style: "width: 100%" %>

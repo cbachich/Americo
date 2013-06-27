@@ -9,6 +9,8 @@
 #  fax        :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  subtitle   :string(255)
+#  summary    :string(255)
 #
 
 require 'spec_helper'

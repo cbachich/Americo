@@ -14,7 +14,6 @@
 class Sheet < ActiveRecord::Base
   belongs_to :company
 
-  has_one :description
   has_many :pages
 
   attr_accessible :name, :title, :subtitle
