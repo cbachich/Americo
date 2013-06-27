@@ -7,6 +7,8 @@
 #  company_id :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  title      :string(255)
+#  subtitle   :string(255)
 #
 
 require 'spec_helper'

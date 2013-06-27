@@ -8,13 +8,11 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  company_id :integer
-#  sheet_id   :integer
 #  short_body :string(255)
 #
 
 class Description < ActiveRecord::Base
   belongs_to :company
-  belongs_to :sheet
 
   attr_accessible :title, :short_body, :body
 

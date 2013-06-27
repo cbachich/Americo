@@ -9,7 +9,7 @@
 
 <% company.sheets.each do |sheet| %>
   <div class="row contents">
-    <h1><%= sheet.description.title %></h1>
+    <h1><%= sheet.title %></h1>
     <p class="byline">Few words on this sheet's content.</p>
     <% sheet.pages.each.with_index do |page,i| 
       size = "span2"

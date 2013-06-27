@@ -8,7 +8,6 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  company_id :integer
-#  sheet_id   :integer
 #  short_body :string(255)
 #
 

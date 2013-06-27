@@ -7,6 +7,8 @@
 #  company_id :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  title      :string(255)
+#  subtitle   :string(255)
 #
 
 class Sheet < ActiveRecord::Base
@@ -15,26 +17,7 @@ class Sheet < ActiveRecord::Base
   has_one :description
   has_many :pages
 
-  attr_accessible :name
-
-  before_update :save_description
-  after_find :default_values_for_description
-
-  def title
-    description.title
-  end
-
-  def title=(value)
-    @title = value
-  end
-
-  def subtitle
-    description.body
-  end
-
-  def subtitle=(value)
-    @body = value
-  end
+  attr_accessible :name, :title, :subtitle
 
   def update_fields(params)
     self.subtitle = params[:subtitle]
@@ -75,17 +58,4 @@ class Sheet < ActiveRecord::Base
     end
     errors
   end
-
-  private
-
-    def default_values_for_description
-      @title = description.title
-      @body = description.body
-    end
-
-    def save_description
-      description.title = @title
-      description.body = @body
-      description.save
-    end
 end

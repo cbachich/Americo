@@ -12,8 +12,10 @@ c = Company.create(title: "AmeriCo Inc", logo_url: "americo_logo_ultra.png", pho
 c.description = Description.create(title: "Quality Service For Over 25 Years", body: "This is a body of text that will describe how great this company is. It will include a little information on the history of the company, as well as what type of work they currently do.\r\n\r\nThere will be multiple paragraphs, so I want to add a few just to see how it looks on the page. Hopefully there will be enough detail in these few paragraphs to hook the customer into finding out more about the company.\r\n\r\nMaybe we should even invite the customer to learn more or contact us to get a quote. Actually we really should include a link under this paragraph for getting a quote!")
  
 # Create a work sheet
-ss = c.sheets.create(name: "services")
-ss.description = Description.create(title: "Services", body: "Here we provide a very high level sentence describing the kind of work done here")
+ss = c.sheets.create(
+  name:     "services",
+  title:    "Services",
+  subtitle: "Here we provide a very high level sentence describing the kind of work done here")
 
 ss_names = 
   [
@@ -49,8 +51,10 @@ ss_names.each_with_index do |p,i|
 end
 
 # Create a About sheet
-as = c.sheets.create(name: "about")
-as.description = Description.create(title: "About", body: "Here we provide a very high level sentence describing the company")
+as = c.sheets.create(
+  name:     "about",
+  title:    "About", 
+  subtitle: "Here we provide a very high level sentence describing the company")
 
 as_names = 
   [

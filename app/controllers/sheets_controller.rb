@@ -1,13 +1,13 @@
 class SheetsController < ApplicationController
   def about
     @sheet = Sheet.find_by_name("about") 
-    @title   = @sheet.description.title
-    @summary = @sheet.description.body
+    @title   = @sheet.title
+    @summary = @sheet.subtitle
   end
 
   def services
     @sheet = Sheet.find_by_name("services") 
-    @title   = @sheet.description.title
-    @summary = @sheet.description.body
+    @title   = @sheet.title
+    @summary = @sheet.subtitle
   end
 end
