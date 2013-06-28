@@ -10,7 +10,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  subtitle   :string(255)
-#  summary    :string(255)
+#  summary    :text(255)
 #
 
 class Company < ActiveRecord::Base
