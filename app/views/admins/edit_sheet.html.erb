@@ -40,6 +40,11 @@
         </div>
 
         <div class="span6">
+          <%= label_tag "#{page.name}_bullet_1", "Bullets" %>
+          <% page.bullets.each.with_index do |bullet, i| %>
+            <%= text_field_tag "#{page.name}_bullet_#{i+1}", bullet, style: "width: 90%" %>
+          <% end %>
+
           <%= label_tag "#{page.name}_description", "Description" %>
           <%= text_area_tag "#{page.name}_description", page.description, rows: 12, style: "width: 90%" %>
         </div>

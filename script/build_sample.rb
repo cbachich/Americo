@@ -37,12 +37,17 @@ pics =
       details:  "A little description of picture 2. Should be 1 or 2 sentences." }
   ]
 
+bullets = ["Highlight #1", "Highlight #2", "Highlight #3"]
+
 ss_names.each_with_index do |p,i|
   image = p[:name] + "_big.jpg"
   p = ss.pages.create(
     name: p[:name], 
     banner_img_url: image, 
     title: p[:title], 
+    bullet_1: bullets[0],
+    bullet_2: bullets[1],
+    bullet_3: bullets[2],
     subtitle: p_subtitle,
     short_description: p_short,
     description: p_desc,
@@ -72,6 +77,9 @@ as_names.each_with_index do |p,i|
     name: p[:name], 
     banner_img_url: image, 
     title: p[:title], 
+    bullet_1: bullets[0],
+    bullet_2: bullets[1],
+    bullet_3: bullets[2],
     subtitle: p_subtitle,
     short_description: p_short,
     description: p_desc,

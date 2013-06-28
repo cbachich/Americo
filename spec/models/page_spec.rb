@@ -13,6 +13,9 @@
 #  short_description :string(255)
 #  description       :text
 #  subtitle          :string(255)
+#  bullet_1          :string(255)
+#  bullet_2          :string(255)
+#  bullet_3          :string(255)
 #
 
 require 'spec_helper'

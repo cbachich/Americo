@@ -13,6 +13,9 @@
 #  short_description :string(255)
 #  description       :text
 #  subtitle          :string(255)
+#  bullet_1          :string(255)
+#  bullet_2          :string(255)
+#  bullet_3          :string(255)
 #
 
 class Page < ActiveRecord::Base
@@ -20,6 +23,9 @@ class Page < ActiveRecord::Base
 
   attr_accessible :name, 
                   :title, 
+                  :bullet_1,
+                  :bullet_2,
+                  :bullet_3,
                   :subtitle,
                   :short_description,
                   :description,
@@ -27,4 +33,8 @@ class Page < ActiveRecord::Base
                   :banner_img_url
 
   has_many :pictures
+
+  def bullets
+    [bullet_1, bullet_2, bullet_3]
+  end
 end
