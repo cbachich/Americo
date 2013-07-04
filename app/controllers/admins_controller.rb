@@ -67,24 +67,31 @@ class AdminsController < ApplicationController
     sheet = Sheet.find(params[:sheet_id])
 
     page = sheet.pages.create(
-      name: "new",
-      title: "New",
-      reversed: false,
-      banner_img_url: "upload_picture.jpg")
-
-    page.description = Description.create(
-      title:      "New",
-      body:       "Insert text here",
-      short_body: "Insert text here")
-      
-    flash[:success] = "Added page to #{} Sheet!"
-    redirect_to :back
+      name: "sample",
+      banner_img_url: "upload_picture.jpg",
+      title: "Sample Title",
+      bullet_1: "Sample Bullet 1",
+      bullet_2: "Sample Bullet 2",
+      bullet_3: "Sample Bullet 3",
+      subtitle: "Sample Subtitle",
+      short_description: "Insert a short description here...",
+      description: "Add paragraphs describing the page.",
+      reversed: false)
+    page.name = "sample#{page.id}"
+    page.save
+    redirect_to :back, notice: "Added new page to sheet!"
   end
 
   def delete_page
-    Page.find(params[:page_id]).destroy
-    flash[:success] = "Deleted page!"
-    redirect_to :back
+    page = Page.find(params[:page_id])
+    title = page.title
+    page.destroy
+    redirect_to :back, notice: "Deleted #{title} page!"
+  end
+
+  def delete_picture
+    Picture.find(params[:picture_id]).destroy
+    redirect_to :back, notice: "Deleted picture!"
   end
 
   private

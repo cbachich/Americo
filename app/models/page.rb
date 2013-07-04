@@ -32,7 +32,7 @@ class Page < ActiveRecord::Base
                   :reversed,
                   :banner_img_url
 
-  has_many :pictures
+  has_many :pictures, dependent: :destroy
 
   def bullets
     [bullet_1, bullet_2, bullet_3]

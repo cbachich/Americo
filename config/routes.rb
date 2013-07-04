@@ -15,7 +15,6 @@ Americo::Application.routes.draw do
   match '/about',    to: 'sheets#about',    as: :about
   match '/services', to: 'sheets#services', as: :services
 
-
   # Admin Pages
   match '/edit/company',  to: 'admins#edit_company',  as: :edit_company
   match '/edit/home',     to: 'admins#edit_home',     as: :edit_home
@@ -28,8 +27,9 @@ Americo::Application.routes.draw do
   match '/update/sheet',   to: 'admins#update_sheet',   as: :update_sheet
 
   # Delete and Add Pages
-  match '/add/:sheet_id',   to: 'admins#add_page',    as: :add_page
-  match '/delete/:page_id', to: 'admins#delete_page', as: :delete_page
+  match '/add/:sheet_id',              to: 'admins#add_page',       as: :add_page
+  match '/delete/page/:page_id',       to: 'admins#delete_page',    as: :delete_page
+  match '/delete/picture/:picture_id', to: 'admins#delete_picture', as: :delete_picture
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

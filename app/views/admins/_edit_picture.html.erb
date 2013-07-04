@@ -11,7 +11,15 @@
   end 
 %>
 <div class="span3">
-  <h4 class="text-center">Picture <%= number+1 %></h4>
+  <h4 class="text-center">
+    Picture <%= number+1 %>
+    <% if defined? pic %>
+      <%= link_to "Delete Picture", 
+            delete_picture_url(picture_id: pic.id),
+            class: "btn btn-mini btn-danger",
+            confirm: "Are you sure you want to delete this picture?" %> 
+    <% end %>
+  </h4>
   <%= image_tag img_url, class: "img-polaroid" %>
   <%= file_field_tag "#{pic_s}_image" %>
 
