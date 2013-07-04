@@ -68,7 +68,6 @@ class AdminsController < ApplicationController
 
     page = sheet.pages.create(
       name: "sample",
-      banner_img_url: "upload_picture.jpg",
       title: "Sample Title",
       bullet_1: "Sample Bullet 1",
       bullet_2: "Sample Bullet 2",

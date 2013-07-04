@@ -34,6 +34,11 @@ class Sheet < ActiveRecord::Base
       page.description = params["#{name}_description"]
       page.reversed = !params["#{name}_reversed"].nil?
 
+      banner_image = params["#{name}_banner_image"]
+      if !banner_image.nil?
+        page.banner_image = banner_image
+      end
+
       i = 0
       page.pictures.each do |pic|
         pic_s = "#{page.name}_#{i}"
