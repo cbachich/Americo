@@ -43,7 +43,7 @@ ss_names.each_with_index do |p,i|
   image = p[:name] + "_big.jpg"
   p = ss.pages.create(
     name: p[:name], 
-    banner_img_url: image, 
+    banner_image: image, 
     title: p[:title], 
     bullet_1: bullets[0],
     bullet_2: bullets[1],
@@ -75,7 +75,7 @@ as_names.each_with_index do |p,i|
   image = p[:name] + "_big.jpg"
   p = as.pages.create(
     name: p[:name], 
-    banner_img_url: image, 
+    banner_image: image, 
     title: p[:title], 
     bullet_1: bullets[0],
     bullet_2: bullets[1],
