@@ -8,7 +8,6 @@ p_desc = "This will be a few paragraphs describing this subcontent. It should pr
 # Start by building the company's high level information
 c = Company.create(
   title:    "AmeriCo Inc", 
-  logo_url: "americo_logo_ultra.png", 
   phone:    "(719) 475-2199", 
   fax:      "(719) 475-2186",
   subtitle: "Quality Service For Over 25 Years", 

@@ -4,13 +4,13 @@
 #
 #  id         :integer          not null, primary key
 #  title      :string(255)
-#  logo_url   :string(255)
 #  phone      :string(255)
 #  fax        :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  subtitle   :string(255)
 #  summary    :text(255)
+#  logo       :string(255)
 #
 
 require 'spec_helper'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130704061906) do
+ActiveRecord::Schema.define(:version => 20130711035059) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -33,13 +33,13 @@ ActiveRecord::Schema.define(:version => 20130704061906) do
 
   create_table "companies", :force => true do |t|
     t.string   "title"
-    t.string   "logo_url"
     t.string   "phone"
     t.string   "fax"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
     t.string   "subtitle"
     t.text     "summary",    :limit => 255
+    t.string   "logo"
   end
 
   create_table "contacts", :force => true do |t|

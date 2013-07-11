@@ -1,4 +1,4 @@
-<%= form_tag :update_company do %>
+<%= form_tag :update_company, multipart: true do %>
   
   <div class="span5 offset1">
     <h2>Company Information</h2>
@@ -10,6 +10,11 @@
 
     <%= label_tag :fax, "Fax Number" %>
     <%= text_field_tag :fax, company.fax %>
+
+    
+    <%= label_tag :logo, "Company Logo" %>
+    <%= image_tag company.logo_url, class: "img-polaroid", style: "height: 250px" %>
+    <%= file_field_tag :logo %>
   </div>
   <div class="span5">
     <h2>Modify Pages</h2>

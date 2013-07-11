@@ -35,6 +35,8 @@ class AdminsController < ApplicationController
     company.title = params[:title]
     company.phone = params[:phone]
     company.fax   = params[:fax]
+    company.logo = params[:logo] 
+
     if company.save
       redirect_to :back, notice: "Company information was successfully updated."
     else
