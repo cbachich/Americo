@@ -8,7 +8,5 @@ class CreateCompanies < ActiveRecord::Migration
 
       t.timestamps
     end
-
-    add_column :descriptions, :company_id, :integer
   end
 end

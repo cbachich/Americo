@@ -4,5 +4,6 @@ class RemoveCompanyFromPages < ActiveRecord::Migration
   end
 
   def down
+    add_column :pages, :company_id, :integer
   end
 end
