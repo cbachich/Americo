@@ -4,6 +4,9 @@ gem 'rails', '~> 3.2.13'
 gem 'bootstrap-sass', '~> 2.3.1.0'
 gem 'devise', '~> 2.2.4'
 gem 'carrierwave', '~> 0.8.0'
+gem 'less-rails', '~> 2.3.3'
+gem 'therubyracer', '~> 0.11.4'
+gem 'less-rails-bootstrap', '~> 2.3.3'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.13.0'
