@@ -5,9 +5,16 @@
   </head>
   <body>
     <h1>A customer has requested a new quote!</h1>
+    <h2>Customer Information</h2>
     <p>
-      Please send the quote to the following email address:<br> 
-      <%= @quote.email %>
+    Name: <%= @quote.name %><br>
+    Company: <%= @quote.company %><br>
+    Email: <%= mail_to @quote.email %><br>
+    Phone Number: <%= @quote.phone %><br>
+    </p>
+    <h3>Comments</h3>
+    <p>
+    <%= simple_format @quote.comments %>
     </p>
   </body>
 </html>

@@ -35,4 +35,36 @@ class Quote < ActiveRecord::Base
                   :attachment_4, 
                   :attachment_5
 
+  def attachments?
+    (!attachment_1_url.nil? ||
+     !attachment_2_url.nil? ||
+     !attachment_3_url.nil? ||
+     !attachment_4_url.nil? ||
+     !attachment_5_url.nil?)
+  end
+
+  def attachments
+    act_attachments = []
+    if !attachment_1_url.nil?
+      act_attachments << 
+        { ident: self.attachment_1_identifier, url: self.attachment_1_url }
+    end
+    if !attachment_2_url.nil?
+      act_attachments << 
+        { ident: self.attachment_2_identifier, url: self.attachment_2_url }
+    end
+    if !attachment_3_url.nil?
+      act_attachments << 
+        { ident: self.attachment_3_identifier, url: self.attachment_3_url }
+    end
+    if !attachment_4_url.nil?
+      act_attachments << 
+        { ident: self.attachment_4_identifier, url: self.attachment_4_url }
+    end
+    if !attachment_5_url.nil?
+      act_attachments << 
+        { ident: self.attachment_5_identifier, url: self.attachment_5_url }
+    end
+    act_attachments
+  end
 end

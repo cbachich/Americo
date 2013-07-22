@@ -3,8 +3,10 @@ class QuoteMailer < ActionMailer::Base
 
   def quote_email(quote)
     @quote = quote
-    if !quote.attachment_1_url.nil?
-      attachments["file1"] = File.read("#{Rails.root.to_s}/public#{quote.attachment_1_url}")
+    if quote.attachments?
+      quote.attachments.each do |attachment|
+        attachments["#{attachment[:name]}"] = File.read("#{Rails.root.to_s}/public#{attachment[:url]}")
+      end
     end
     mail(from: quote.email)
   end

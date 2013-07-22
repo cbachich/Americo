@@ -1,6 +1,14 @@
 A customer has requested a new quote!
 =====================================
 
-Please send the quote to the following email address: 
+Customer Information
+--------------------
 
-<%= @email %>
+Name: <%= @quote.name %>
+Company: <%= @quote.company %>
+Email: <%= mail_to @quote.email %>
+Phone Number: <%= @quote.phone %>
+  
+Comments
+--------
+<%= @quote.comments %>
