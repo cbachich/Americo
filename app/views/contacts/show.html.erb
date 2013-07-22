@@ -1,8 +1,8 @@
 <% provide(:title, "Contact") %>
 <div class="container contact">
-  <div class="span5 quote">
-    <%= form_tag("/contact", :method => "get") do %>
-      <div class="span4 space-top">
+  <div class="span6 quote">
+    <%= form_tag :send_quote, multipart: true do %>
+      <div class="span5 space-top">
         <legend>Request a Quote</legend>
         <%= render '/shared/quote' %>
       </div>
@@ -11,7 +11,7 @@
       </div>
     <% end %>
   </div>
-  <div class="span5 offset1 directions">
+  <div class="span5 directions">
     <div class="span4 space-top">
       <iframe frameborder="0" 
               scrolling="no" 

@@ -31,6 +31,9 @@ Americo::Application.routes.draw do
   match '/delete/page/:page_id',       to: 'admins#delete_page',    as: :delete_page
   match '/delete/picture/:picture_id', to: 'admins#delete_picture', as: :delete_picture
 
+  # Send Quote
+  match '/send/quote', to: 'contacts#send_quote', as: :send_quote
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

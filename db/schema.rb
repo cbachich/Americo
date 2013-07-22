@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130711035059) do
+ActiveRecord::Schema.define(:version => 20130718135000) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -78,6 +78,21 @@ ActiveRecord::Schema.define(:version => 20130711035059) do
   end
 
   add_index "pictures", ["page_id"], :name => "index_pictures_on_page_id"
+
+  create_table "quotes", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "company"
+    t.text     "comments"
+    t.string   "attachment_1"
+    t.string   "attachment_2"
+    t.string   "attachment_3"
+    t.string   "attachment_4"
+    t.string   "attachment_5"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "sheets", :force => true do |t|
     t.string   "name"

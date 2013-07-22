@@ -40,13 +40,15 @@
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="quoteModalLabel">Request a Quote</h3>
   </div>
-  <div class="modal-body">
-    <%= render '/shared/quote' %>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary">Submit</button>
-  </div>
+  <%= form_tag :send_quote, multipart: true do %>
+    <div class="modal-body">
+      <%= render '/shared/quote' %>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      <%= submit_tag "Submit", class: "btn btn-primary" %>
+    </div>
+  <% end %>
 </div>
 
 <script type="text/javascript">
