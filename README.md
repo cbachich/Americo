@@ -29,5 +29,5 @@ config.action_mailer.smtp_settings = {
 
 If you've deployed to Heroku, setup your Gmail SMTP username and password:
 
-  heroku config:add GMAIL_USERNAME=myname@gmail.com
-  heroku config:add GMAIL_PASSWORD=mypassword 
+	heroku config:add GMAIL_USERNAME=myname@gmail.com
+	heroku config:add GMAIL_PASSWORD=mypassword 
