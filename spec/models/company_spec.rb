@@ -11,6 +11,7 @@
 #  subtitle   :string(255)
 #  summary    :text(255)
 #  logo       :string(255)
+#  email      :string(255)
 #
 
 require 'spec_helper'

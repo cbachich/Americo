@@ -11,13 +11,14 @@
 #  subtitle   :string(255)
 #  summary    :text(255)
 #  logo       :string(255)
+#  email      :string(255)
 #
 
 class Company < ActiveRecord::Base
   require 'carrierwave/orm/activerecord'
   mount_uploader :logo, LogoUploader
 
-  attr_accessible :title, :subtitle, :summary, :logo, :phone, :fax
+  attr_accessible :title, :subtitle, :summary, :logo, :phone, :fax, :email
 
   has_many :sheets
 

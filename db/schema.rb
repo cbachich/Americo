@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130718135000) do
+ActiveRecord::Schema.define(:version => 20130723141040) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20130718135000) do
     t.string   "subtitle"
     t.text     "summary",    :limit => 255
     t.string   "logo"
+    t.string   "email"
   end
 
   create_table "contacts", :force => true do |t|

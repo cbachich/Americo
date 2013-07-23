@@ -11,6 +11,8 @@
     <%= label_tag :fax, "Fax Number" %>
     <%= text_field_tag :fax, company.fax %>
 
+    <%= label_tag :email, "Email" %>
+    <%= text_field_tag :email, company.email %>
     
     <%= label_tag :logo, "Company Logo" %>
     <%= image_tag company.logo_url, class: "img-polaroid", style: "height: 250px" %>

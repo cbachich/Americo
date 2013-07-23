@@ -35,6 +35,7 @@ class AdminsController < ApplicationController
     company.title = params[:title]
     company.phone = params[:phone]
     company.fax   = params[:fax]
+    company.email = params[:email]
     company.logo = params[:logo] 
 
     if company.save
