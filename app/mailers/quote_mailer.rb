@@ -5,7 +5,7 @@ class QuoteMailer < ActionMailer::Base
     @quote = quote
     if quote.attachments?
       quote.attachments.each do |attachment|
-        attachments["#{attachment[:name]}"] = File.read("#{Rails.root.to_s}/public#{attachment[:url]}")
+        attachments["#{attachment[:ident]}"] = File.read("#{Rails.root.to_s}/public#{attachment[:url]}")
       end
     end
     mail(from: quote.email)
