@@ -14,6 +14,18 @@
     <%= label_tag :email, "Email" %>
     <%= text_field_tag :email, company.email %>
     
+    <%= label_tag :address, "Address" %>
+    <%= text_field_tag :address, company.address %>
+
+    <%= label_tag :city, "City" %>
+    <%= text_field_tag :city, company.city %>
+
+    <%= label_tag :state, "State" %>
+    <%= text_field_tag :state, company.state %>
+
+    <%= label_tag :zipcode, "Zipcode" %>
+    <%= text_field_tag :zipcode, company.zipcode %>
+
     <%= label_tag :logo, "Company Logo" %>
     <%= image_tag company.logo_url, class: "img-polaroid", style: "height: 250px" %>
     <%= file_field_tag :logo %>

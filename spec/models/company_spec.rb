@@ -12,6 +12,10 @@
 #  summary    :text(255)
 #  logo       :string(255)
 #  email      :string(255)
+#  address    :string(255)
+#  city       :string(255)
+#  state      :string(255)
+#  zipcode    :integer
 #
 
 require 'spec_helper'

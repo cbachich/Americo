@@ -21,8 +21,8 @@
     <div class="span4 space-top space-bottom">
       <address>
         <strong><%= company.title %></strong><br>
-        85 Mt View Ln<br>
-        Colorado Springs, CO 80907<br>
+        <%= company.address %><br>
+        <%= company.city %>, <%= company.state %> <%= company.zipcode %><br>
         <abbr title="Phone">P:</abbr> <%= company.phone %> <br>
         <abbr title="Fax">F:</abbr> <%= company.fax %> <br>
         <abbr title="Email">E:</abbr> <%= mail_to company.email %>

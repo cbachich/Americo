@@ -32,11 +32,15 @@ class AdminsController < ApplicationController
 
   def update_company
     company = Company.first
-    company.title = params[:title]
-    company.phone = params[:phone]
-    company.fax   = params[:fax]
-    company.email = params[:email]
-    company.logo = params[:logo] 
+    company.title   = params[:title]
+    company.phone   = params[:phone]
+    company.fax     = params[:fax]
+    company.email   = params[:email]
+    company.address = params[:address]
+    company.city    = params[:city]
+    company.state   = params[:state]
+    company.zipcode = params[:zipcode]
+    company.logo    = params[:logo] 
 
     if company.save
       redirect_to :back, notice: "Company information was successfully updated."
