@@ -35,6 +35,8 @@ class Quote < ActiveRecord::Base
                   :attachment_4, 
                   :attachment_5
 
+  validates_presence_of :name, :email, :phone
+
   def attachments?
     (!attachment_1_url.nil? ||
      !attachment_2_url.nil? ||
