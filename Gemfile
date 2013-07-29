@@ -9,6 +9,9 @@ gem 'carrierwave', '~> 0.8.0'
 gem 'less-rails', '~> 2.3.3'
 gem 'therubyracer', '~> 0.11.4'
 gem 'less-rails-bootstrap', '~> 2.3.3'
+gem 'simple_form', '~> 2.1.0'
+gem 'client_side_validations', '~> 3.2.5'
+gem 'client_side_validations-simple_form', '~> 2.1.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.13.0'

@@ -40,17 +40,20 @@
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="quoteModalLabel">Request a Quote</h3>
   </div>
-  <%= form_tag :send_quote, multipart: true do %>
+  <%= simple_form_for Quote.new, 
+               url: { action: "create", controller: "quotes" },
+               multipart: true,
+               validate: true do |f| %>
     <div class="modal-body">
-      <%= render '/shared/quote' %>
+      <%= render '/shared/quote', f: f %>
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-      <%= submit_tag "Submit", class: "btn btn-primary" %>
+      <%= f.submit class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
 
 <script type="text/javascript">
   $('#quoteModal').modal(options)
-T </script>
+</script>

@@ -1,13 +1,16 @@
 <% provide(:title, "Contact") %>
 <div class="container contact">
   <div class="span6 quote">
-    <%= form_tag :send_quote, multipart: true do %>
+    <%= simple_form_for Quote.new, 
+                 url: { action: "create", controller: "quotes" },
+                 multipart: true,
+                 validate: true do |f| %>
       <div class="span5 space-top">
         <legend>Request a Quote</legend>
-        <%= render '/shared/quote' %>
+        <%= render '/shared/quote', f: f %>
       </div>
       <div class="span4 space-bottom">
-        <%= submit_tag "Submit", class: "btn btn-primary" %>
+        <%= f.submit class: "btn btn-primary" %>
       </div>
     <% end %>
   </div>

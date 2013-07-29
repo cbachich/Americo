@@ -4,24 +4,13 @@
   need a faster response, please call us at 
   <strong><%= company.phone %></strong>.
 </p>
-<%= label_tag(:name, "Name") %>
-<%= text_field_tag(:name) %>
-
-<%= label_tag(:email, "Email") %>
-<%= text_field_tag(:email) %>
-
-<%= label_tag(:phone, "Phone") %>
-<%= text_field_tag(:phone) %>
-
-<%= label_tag(:company, "Company") %>
-<%= text_field_tag(:company) %>
-
-<%= label_tag(:attachments, "Add files to be quoted") %>
-<%= file_field_tag :attachment_1 %>
-<%= file_field_tag :attachment_2 %>
-<%= file_field_tag :attachment_3 %>
-<%= file_field_tag :attachment_4 %>
-<%= file_field_tag :attachment_5 %>
-
-<%= label_tag(:comments, "Comments") %>
-<%= text_area_tag :comments, nil, rows: 10, style: "width: 100%" %>
+<%= f.input :name %>
+<%= f.input :email %>
+<%= f.input :phone %>
+<%= f.input :company %>
+<%= f.input :attachment_1, label: "Add files to be quoted" %>
+<%= f.input :attachment_2, label: false %>
+<%= f.input :attachment_3, label: false %>
+<%= f.input :attachment_4, label: false %>
+<%= f.input :attachment_5, label: false %>
+<%= f.input :comments %>

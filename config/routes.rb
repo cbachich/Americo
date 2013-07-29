@@ -11,6 +11,8 @@ Americo::Application.routes.draw do
 
   root to: 'static_pages#home'
 
+  resources :quotes
+
   match '/contact',  to: 'contacts#show',   as: :contact
   match '/about',    to: 'sheets#about',    as: :about
   match '/services', to: 'sheets#services', as: :services
