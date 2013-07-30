@@ -12,6 +12,8 @@ gem 'less-rails-bootstrap', '~> 2.3.3'
 gem 'simple_form', '~> 2.1.0'
 gem 'client_side_validations', '~> 3.2.5'
 gem 'client_side_validations-simple_form', '~> 2.1.0'
+gem 'capistrano', '~> 2.15.5'
+gem 'rvm-capistrano', '~> 1.4.1'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.13.0'
