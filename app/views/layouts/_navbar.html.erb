@@ -41,7 +41,6 @@
     <h3 id="quoteModalLabel">Request a Quote</h3>
   </div>
   <%= simple_form_for Quote.new, 
-               url: { action: "create", controller: "quotes" },
                multipart: true,
                validate: true do |f| %>
     <div class="modal-body">

@@ -1,5 +1,7 @@
 Americo::Application.routes.draw do
 
+  resources :quotes
+
   devise_for :admins, :skip => [:registrations]
   as :admin do
     get 'admins/edit' => 'devise/registrations#edit', :as => 'edit_admin_registration'
@@ -10,8 +12,6 @@ Americo::Application.routes.draw do
   get "static_pages/home"
 
   root to: 'static_pages#home'
-
-  resources :quotes
 
   match '/contact',  to: 'contacts#show',   as: :contact
   match '/about',    to: 'sheets#about',    as: :about
