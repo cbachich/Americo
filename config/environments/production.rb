@@ -74,10 +74,10 @@ Americo::Application.configure do
   config.action_mailer.default :charset => "utf-8"
 
   config.action_mailer.smtp_settings = {
-    address: "mail.americoco.com",
-    port: 587,
+    address: "oxmail.registrar-servers.com",
+    port: 465,
     domain: "americoco.com",
-    authentication: "plain",
+    authentication: "login",
     enable_starttls_auto: true,
     user_name: ENV["MAIL_USERNAME"],
     password: ENV["MAIL_PASSWORD"]
