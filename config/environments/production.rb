@@ -75,8 +75,8 @@ Americo::Application.configure do
 
   config.action_mailer.smtp_settings = {
     address: "oxmail.registrar-servers.com",
-    port: 465,
-    domain: "americoco.com",
+    port: 25,
+    domain: "registrar-servers.com",
     authentication: :cram_md5,
     enable_starttls_auto: true,
     user_name: ENV["MAIL_USERNAME"],
