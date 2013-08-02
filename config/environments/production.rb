@@ -77,7 +77,7 @@ Americo::Application.configure do
     address: "oxmail.registrar-servers.com",
     port: 25,
     domain: "registrar-servers.com",
-    authentication: :cram_md5,
+    authentication: :plain,
     enable_starttls_auto: true,
     user_name: ENV["MAIL_USERNAME"],
     password: ENV["MAIL_PASSWORD"]
