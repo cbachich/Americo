@@ -66,6 +66,7 @@ Americo::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   config.action_mailer.default_url_options = { :host => 'americoco.com' }
+  #
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp
@@ -74,12 +75,12 @@ Americo::Application.configure do
   config.action_mailer.default :charset => "utf-8"
 
   config.action_mailer.smtp_settings = {
-    address: "oxmail.registrar-servers.com",
-    port: 25,
-    domain: "registrar-servers.com",
-    authentication: :plain,
-    enable_starttls_auto: true,
-    user_name: ENV["MAIL_USERNAME"],
-    password: ENV["MAIL_PASSWORD"]
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => 'americoco.com',
+    :user_name            => ENV["GMAIL_USERNAME"],
+    :password             => ENV["GMAIL_PASSWORD"],
+    :authentication       => 'plain',
+    :enable_starttls_auto => true
   }
 end
