@@ -21,7 +21,4 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: americo_production
-  username: cbachich
   pool: 5
-  password: 
