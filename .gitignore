@@ -16,3 +16,7 @@
 
 # Ignore anything uploaded during testing
 /public/uploads
+
+# Ignore deployment files
+/config/deploy.rb
+Capfile
