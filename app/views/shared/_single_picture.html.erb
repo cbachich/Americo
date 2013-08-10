@@ -1,20 +1,14 @@
-<div class="well row">
+<div class="row">
   <a href="#<%= modal %>" class="thumbnail" data-toggle="modal">
     <%= image_tag picture.image_url %>
   </a>
-  <h4><%= picture.title %></h4>
-  <p><%= picture.details %></p>
 </div>
 
 <!-- Modal -->
 <div id="<%= modal %>" 
      class="modal hide fade" 
-     tabindex="-1" 
-     role="dialog" 
      aria-hidden="true">
-  <div class="modal-body">
-    <%= image_tag picture.image_url %>
-  </div>
+  <%= image_tag picture.image_url %>
 </div>
 
 <script type="text/javascript">

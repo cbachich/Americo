@@ -16,6 +16,8 @@
 @lightBlue: #0D6C8C;
 @darkBlue: #020031;
 @grayMediumLight: #eaeaea;
+@other1: #474747;
+@other2: #bbbbbb;
 
 .small-margin {
   margin: 10px;
@@ -38,7 +40,7 @@
   height: 100%;
 }
 
-.background-gradient {
+.blue-background-gradient {
   background: @darkBlue; /* Old browsers */
   background: -moz-linear-gradient(45deg, @darkBlue 0%, @lightBlue 100%);
   background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,@darkBlue), color-stop(100%,@lightBlue));
@@ -48,10 +50,20 @@
   background: linear-gradient(45deg, @darkBlue 0%, @lightBlue 100%) repeat scroll 0% 0% transparent;
 }
 
+.background-gradient {
+  background: @other1; /* Old browsers */
+  background: -moz-linear-gradient(45deg, @other1 0%, @other2 100%);
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,@other1), color-stop(100%,@other2));
+  background: -webkit-linear-gradient(45deg, @other1 0%,@other2 100%);
+  background: -o-linear-gradient(45deg, @other1 0%,@other2 100%);
+  background: -ms-linear-gradient(45deg, @other1 0%,@other2 100%);
+  background: linear-gradient(45deg, @other1 0%, @other2 100%) repeat scroll 0% 0% transparent;
+}
+
 /* overview */
 
 .banner {
-  .background-gradient;
+  .blue-background-gradient;
   position: relative;
   padding-top: 40px;
   color: white;
@@ -218,13 +230,15 @@ section {
 
 .page-banner {
   .background-gradient;
-  border-radius: 70px;
+  border-radius: 10px;
 
   color: white;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 
   h1 {
-    padding-top: 20px;
+    padding-top: 50px;
+    font-size: 50px;
+    line-height: 90%;
   }
 
   ul {
@@ -243,6 +257,11 @@ section {
 
 }
 
+.page-body {
+  font-size: 18px;
+  text-align: justify;
+}
+
 /* Contact */
 .container.contact {
   margin-top: 30px;
@@ -250,7 +269,7 @@ section {
 }
 
 .quote {
-  .background-gradient;
+  .blue-background-gradient;
   border-radius: 30px;
 
   legend {
@@ -260,7 +279,7 @@ section {
 }
 
 .directions {
-  .background-gradient;
+  .blue-background-gradient;
   border-radius: 30px;
   padding: 0 0 0 40px;
 
