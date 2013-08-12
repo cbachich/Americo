@@ -8,21 +8,32 @@
 </div>
 
 <% company.sheets.each do |sheet| %>
-  <div class="row contents">
+  <div class="container contents">
     <h1><%= sheet.title %></h1>
     <p class="byline">Few words on this sheet's content.</p>
     <% sheet.pages.each.with_index do |page,i| 
-      size = "span2"
-      if i.zero?
-        size += " offset" + ((12-(sheet.pages.count*2))/2).to_s
-      end %>
+      size = "span4" 
+      if (i % 3) == 0
+        new_row = true
+        remaining = sheet.pages.count - i
+        if remaining < 3
+          size += " offset4" if remaining == 1
+          size += " offset2" if remaining == 2
+        end
+      end
+      if new_row %>
+        <div class="row"%>
+      <% end %>
       <a href="<%= "#{sheet.name}##{page.name}" %>">
         <div class="<%= size %>">
           <%= image_tag page.banner_image_url %>
-          <h3><%= page.title %></h3>
+          <h4><%= page.title %></h4>
           <p><%= page.short_description %></p>
         </div>
       </a>
+      <% if i % 3 == 2  %>
+        </div>
+      <% end %>
   <% end %>
   </div>
 <% end %>
