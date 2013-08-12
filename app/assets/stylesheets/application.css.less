@@ -265,23 +265,33 @@ section {
 /* Contact */
 .container.contact {
   margin-top: 30px;
-  color: white;
 }
 
 .quote {
-  .blue-background-gradient;
-  border-radius: 30px;
+  font-size: 16px;
+  text-align: justify;
+  line-height: 150%;
 
-  legend {
+  h3 {
+    .background-gradient;
+    border-radius: 10px;
+    text-align: center;
     color: white;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  input, textarea {
+    width: 95%;
   }
 
 }
 
 .directions {
-  .blue-background-gradient;
-  border-radius: 30px;
   padding: 0 0 0 40px;
+  font-size: 16px;
 
   iframe {
     height: 300px;
@@ -289,27 +299,15 @@ section {
   }
 
   a {
-    color: orange;
+    color: @lightBlue;
   }
 
   a:hover {
-    color: white;
+    color: @darkBlue;
   }
 
   strong {
     font-size: 40px;
+    color: @lightBlue;
   }
-}
-
-/* Admin Pages */
-
-.nav-pills > li {
-  float:none;
-  display:inline-block;
-  *display:inline; /* ie7 fix */
-   zoom:1; /* hasLayout ie7 trigger */
-}
-
-.nav-pills {
-  text-align:center;
 }
