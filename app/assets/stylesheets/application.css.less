@@ -13,11 +13,18 @@
 */
 @import "twitter/bootstrap";
 
-@lightBlue: #0D6C8C;
+@lightTurqoise: #B5E9F7;
+@turqoise: #0d6c8c; 
 @darkBlue: #020031;
 @grayMediumLight: #eaeaea;
-@other1: #474747;
-@other2: #bbbbbb;
+@darkGrey: #474747;
+@mediumGrey: #6e6e6e;
+@lightGrey: #bbbbbb;
+
+@bannerDark: @turqoise;
+@bannerLight: @lightTurqoise;
+@pageDark: @mediumGrey;
+@pageLight: @lightGrey;
 
 .small-margin {
   margin: 10px;
@@ -40,30 +47,30 @@
   height: 100%;
 }
 
-.blue-background-gradient {
-  background: @darkBlue; /* Old browsers */
-  background: -moz-linear-gradient(45deg, @darkBlue 0%, @lightBlue 100%);
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,@darkBlue), color-stop(100%,@lightBlue));
-  background: -webkit-linear-gradient(45deg, @darkBlue 0%,@lightBlue 100%);
-  background: -o-linear-gradient(45deg, @darkBlue 0%,@lightBlue 100%);
-  background: -ms-linear-gradient(45deg, @darkBlue 0%,@lightBlue 100%);
-  background: linear-gradient(45deg, @darkBlue 0%, @lightBlue 100%) repeat scroll 0% 0% transparent;
+.banner-background-gradient {
+  background: @bannerDark; /* Old browsers */
+  background: -moz-linear-gradient(45deg, @bannerDark 0%, @bannerLight 100%);
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,@bannerDark), color-stop(100%,@bannerLight));
+  background: -webkit-linear-gradient(45deg, @bannerDark 0%,@bannerLight 100%);
+  background: -o-linear-gradient(45deg, @bannerDark 0%,@bannerLight 100%);
+  background: -ms-linear-gradient(45deg, @bannerDark 0%,@bannerLight 100%);
+  background: linear-gradient(45deg, @bannerDark 0%, @bannerLight 100%) repeat scroll 0% 0% transparent;
 }
 
-.background-gradient {
-  background: @other1; /* Old browsers */
-  background: -moz-linear-gradient(45deg, @other1 0%, @other2 100%);
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,@other1), color-stop(100%,@other2));
-  background: -webkit-linear-gradient(45deg, @other1 0%,@other2 100%);
-  background: -o-linear-gradient(45deg, @other1 0%,@other2 100%);
-  background: -ms-linear-gradient(45deg, @other1 0%,@other2 100%);
-  background: linear-gradient(45deg, @other1 0%, @other2 100%) repeat scroll 0% 0% transparent;
+.page-background-gradient {
+  background: @pageDark; /* Old browsers */
+  background: -moz-linear-gradient(45deg, @pageDark 0%, @pageLight 100%);
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,@pageDark), color-stop(100%,@pageLight));
+  background: -webkit-linear-gradient(45deg, @pageDark 0%,@pageLight 100%);
+  background: -o-linear-gradient(45deg, @pageDark 0%,@pageLight 100%);
+  background: -ms-linear-gradient(45deg, @pageDark 0%,@pageLight 100%);
+  background: linear-gradient(45deg, @pageDark 0%, @pageLight 100%) repeat scroll 0% 0% transparent;
 }
 
 /* overview */
 
 .banner {
-  .blue-background-gradient;
+  .banner-background-gradient;
   position: relative;
   padding-top: 40px;
   color: white;
@@ -229,37 +236,52 @@ section {
 }
 
 .page-banner {
-  .background-gradient;
-  border-radius: 10px;
+  .page-background-gradient;
 
   color: white;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4), 0px 0px 30px rgba(0, 0, 0, 0.075);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
 
-  h1 {
-    padding-top: 50px;
-    font-size: 50px;
-    line-height: 90%;
+  .title {
+    margin-top: 30px;
+    
+    strong {
+      font-size: 60px;
+      line-height: 90%;
+    }
   }
 
-  ul {
-    font-size: 20px;
-    padding-bottom: 20px;
+  .image {
+    margin: 10px;
+
+    img {
+      width: 200px;
+      float: none;
+    }
+  }
+}
+
+.page-banner.reversed {
+  .title {
+    margin: 30px 30px;
   }
 
-  h1, ul {
-    padding-left: 40px;
+  .image {
+    float: right;
   }
-
-  img {
-    width: 250px;
-    padding: 10px;
-  }
-
 }
 
 .page-body {
   font-size: 18px;
   text-align: justify;
+}
+
+.page-body.reversed {
+  p {
+    padding-right: 20px;
+  }
 }
 
 /* Contact */
@@ -273,7 +295,7 @@ section {
   line-height: 150%;
 
   h3 {
-    .background-gradient;
+    .page-background-gradient;
     border-radius: 10px;
     text-align: center;
     color: white;
@@ -299,7 +321,7 @@ section {
   }
 
   a {
-    color: @lightBlue;
+    color: @turqoise;
   }
 
   a:hover {
@@ -308,6 +330,6 @@ section {
 
   strong {
     font-size: 40px;
-    color: @lightBlue;
+    color: @turqoise;
   }
 }

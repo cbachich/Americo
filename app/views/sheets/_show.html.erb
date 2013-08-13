@@ -7,11 +7,15 @@
       <%= render '/sheets/banner', page: page %> 
       <div class="row">
         <% if page.reversed %>
-          <%= render '/sheets/infobox', page: page %>
+          <div class="span6 page-body reversed">
+            <p><%= simple_format(page.description) %></p>
+          </div>
           <%= render '/sheets/picturebox', page: page %>
         <% else %>
           <%= render '/sheets/picturebox', page: page %>
-          <%= render '/sheets/infobox', page: page %>
+          <div class="span6 page-body">
+            <p><%= simple_format(page.description) %></p>
+          </div>
         <% end %>
       </div>
     </section>
