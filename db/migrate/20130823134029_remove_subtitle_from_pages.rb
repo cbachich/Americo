@@ -1,5 +1,9 @@
 class RemoveSubtitleFromPages < ActiveRecord::Migration
-  def change
-    remove_column :pages, :subtitle, :string
+  def up 
+    remove_column :pages, :subtitle
+  end
+
+  def down
+    add_column :pages, :subtitle, :string
   end
 end
