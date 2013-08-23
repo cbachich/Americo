@@ -55,10 +55,6 @@ module ApplicationHelper
       sheet.pages.create(
         name: "sample",
         title: "Sample Page",
-        bullet_1: "Sample Bullet 1",
-        bullet_2: "Sample Bullet 2",
-        bullet_3: "Sample Bullet 3",
-        subtitle: "Title of the following paragraphs",
         short_description: 
           "This is a short one or two sentence description for the page.",
         description: "A few paragraphs describing this page.",

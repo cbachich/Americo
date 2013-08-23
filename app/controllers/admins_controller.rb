@@ -76,10 +76,6 @@ class AdminsController < ApplicationController
     page = sheet.pages.create(
       name: "sample",
       title: "Sample Title",
-      bullet_1: "Sample Bullet 1",
-      bullet_2: "Sample Bullet 2",
-      bullet_3: "Sample Bullet 3",
-      subtitle: "Sample Subtitle",
       short_description: "Insert a short description here...",
       description: "Add paragraphs describing the page.",
       reversed: false)

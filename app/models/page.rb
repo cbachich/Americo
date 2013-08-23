@@ -11,9 +11,6 @@
 #  sheet_id          :integer
 #  short_description :string(255)
 #  description       :text
-#  bullet_1          :string(255)
-#  bullet_2          :string(255)
-#  bullet_3          :string(255)
 #  banner_image      :string(255)
 #
 
@@ -24,19 +21,12 @@ class Page < ActiveRecord::Base
 
   attr_accessible :name, 
                   :title, 
-                  :bullet_1,
-                  :bullet_2,
-                  :bullet_3,
                   :short_description,
                   :description,
                   :reversed,
                   :banner_image
 
   has_many :pictures, dependent: :destroy
-
-  def bullets
-    [bullet_1, bullet_2, bullet_3]
-  end
 
   def banner_image_url
     if banner_image?
