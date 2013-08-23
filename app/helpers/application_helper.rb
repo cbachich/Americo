@@ -58,6 +58,7 @@ module ApplicationHelper
         short_description: 
           "This is a short one or two sentence description for the page.",
         description: "A few paragraphs describing this page.",
+        row: 1,
         reversed: false
       )
     end

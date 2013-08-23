@@ -12,6 +12,7 @@
 #  short_description :string(255)
 #  description       :text
 #  banner_image      :string(255)
+#  row               :integer          default(0)
 #
 
 require 'spec_helper'

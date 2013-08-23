@@ -12,10 +12,13 @@
 #  short_description :string(255)
 #  description       :text
 #  banner_image      :string(255)
+#  row               :integer          default(0)
 #
 
 class Page < ActiveRecord::Base
   belongs_to :sheet
+
+  default_scope :order => 'row ASC'
 
   mount_uploader :banner_image, ImageUploader
 
@@ -24,7 +27,8 @@ class Page < ActiveRecord::Base
                   :short_description,
                   :description,
                   :reversed,
-                  :banner_image
+                  :banner_image,
+                  :row
 
   has_many :pictures, dependent: :destroy
 

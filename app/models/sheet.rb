@@ -18,6 +18,11 @@ class Sheet < ActiveRecord::Base
 
   attr_accessible :name, :title, :subtitle
 
+  def new_page_row
+    row = self.pages.maximum(:row)
+    row + 1
+  end
+
   def update_fields(params)
     self.subtitle = params[:subtitle]
 
@@ -28,6 +33,7 @@ class Sheet < ActiveRecord::Base
       page.title = params["#{name}_title"]
       page.short_description = params["#{name}_short"]
       page.description = params["#{name}_description"]
+      page.row = params["#{name}_row"]
       page.reversed = !params["#{name}_reversed"].nil?
 
       banner_image = params["#{name}_banner_image"]

@@ -78,6 +78,7 @@ class AdminsController < ApplicationController
       title: "Sample Title",
       short_description: "Insert a short description here...",
       description: "Add paragraphs describing the page.",
+      row: sheet.new_page_row,
       reversed: false)
     page.name = "sample#{page.id}"
     page.save

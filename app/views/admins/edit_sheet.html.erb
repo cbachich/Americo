@@ -38,6 +38,9 @@
           <%= file_field_tag "#{page.name}_banner_image" %>
         </div>
         <div class="span6">
+          <%= label_tag "#{page.name}_row", "Page Order" %>
+          <%= number_field_tag "#{page.name}_row", page.row %>
+
           <label class="checkbox">
             <%= check_box_tag "#{page.name}_reversed", 'true', page.reversed, class: "checkbox" %>
             Reverse Page?
