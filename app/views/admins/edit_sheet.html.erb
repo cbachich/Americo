@@ -34,15 +34,17 @@
 
           <%= label_tag "#{page.name}_banner_image", "Banner Image" %>
           <%= image_tag page.banner_image_url, class: "img-polaroid", style: "height: 250px" %>
+
           <%= file_field_tag "#{page.name}_banner_image" %>
         </div>
-
         <div class="span6">
-          <%= label_tag "#{page.name}_reversed", "Reverse page?" %>
-          <%= check_box_tag "#{page.name}_reversed", 'true', page.reversed %>
+          <label class="checkbox">
+            <%= check_box_tag "#{page.name}_reversed", 'true', page.reversed, class: "checkbox" %>
+            Reverse Page?
+          </label>
 
           <%= label_tag "#{page.name}_description", "Description" %>
-          <%= text_area_tag "#{page.name}_description", page.description, rows: 18, style: "width: 90%" %>
+          <%= text_area_tag "#{page.name}_description", page.description, rows: 22, style: "width: 90%" %>
         </div>
       </div>
 
