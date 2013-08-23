@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130723143444) do
+ActiveRecord::Schema.define(:version => 20130823134029) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(:version => 20130723143444) do
     t.integer  "sheet_id"
     t.string   "short_description"
     t.text     "description"
-    t.string   "subtitle"
     t.string   "bullet_1"
     t.string   "bullet_2"
     t.string   "bullet_3"

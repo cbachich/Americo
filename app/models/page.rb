@@ -11,7 +11,6 @@
 #  sheet_id          :integer
 #  short_description :string(255)
 #  description       :text
-#  subtitle          :string(255)
 #  bullet_1          :string(255)
 #  bullet_2          :string(255)
 #  bullet_3          :string(255)
@@ -28,7 +27,6 @@ class Page < ActiveRecord::Base
                   :bullet_1,
                   :bullet_2,
                   :bullet_3,
-                  :subtitle,
                   :short_description,
                   :description,
                   :reversed,

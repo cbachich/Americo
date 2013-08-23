@@ -29,7 +29,6 @@ class Sheet < ActiveRecord::Base
       page.bullet_1 = params["#{name}_bullet_1"]
       page.bullet_2 = params["#{name}_bullet_2"]
       page.bullet_3 = params["#{name}_bullet_3"]
-      page.subtitle = params["#{name}_subtitle"]
       page.short_description = params["#{name}_short"]
       page.description = params["#{name}_description"]
       page.reversed = !params["#{name}_reversed"].nil?
