@@ -30,7 +30,7 @@
           <%= text_field_tag "#{page.name}_title", page.title %>
 
           <%= label_tag "#{page.name}_short", "Short Description" %>
-          <%= text_area_tag "#{page.name}_short", page.short_description, rows: 2, style: "width: 90%" %>
+          <%= text_area_tag "#{page.name}_short", page.short_description, rows: 4, style: "width: 90%" %>
 
           <%= label_tag "#{page.name}_banner_image", "Banner Image" %>
           <%= image_tag page.banner_image_url, class: "img-polaroid", style: "height: 250px" %>
